@@ -13,7 +13,7 @@
 
 - **`main`** - Production code only. Requires PR + approval
 - **`develop`** - Integration/testing branch
-- **Individual branches**: `HemanthRayudu`, `DhanvardiniRajendran`, `RevanthPadala`
+- **Individual branches**: `HemanthRayudu`,`Omraut`,`PeiYing`
 
 ## Daily Workflow
 
