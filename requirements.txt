@@ -9,3 +9,13 @@ seaborn>=0.13.0
 Pillow>=10.1.0
 opencv-python>=4.9.0.80
 beautifulsoup4>=4.12.0
+diagrams==0.24.4
+# Enhanced OCR dependencies
+PyMuPDF>=1.23.0
+scikit-image>=0.21.0
+# Additional image processing
+imageio>=2.31.0
+# For better OCR accuracy
+easyocr>=1.7.0
+# Optional: for advanced table detection
+tabula-py>=2.8.0
