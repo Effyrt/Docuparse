@@ -9,6 +9,15 @@ stages:
     outs:
       - data/parsed/text/
 
+  extract_tables:
+    cmd: python src/extractors/table_extractor.py
+    deps:
+      - data/raw/10-K/
+      - data/raw/10-Q/
+      - src/extractors/table_extractor.py
+    outs:
+      - data/parsed/tables/
+
 # Optional: Define parameters for experimentation
 params:
   - src/params.yaml
@@ -18,3 +27,6 @@ plots:
   - data/parsed/text/processing_log.json:
       x: total_statistics.total_files
       y: total_statistics.ocr_percentage
+  - data/parsed/tables/table_processing_log.json:
+      x: total_statistics.total_files
+      y: total_statistics.total_tables
