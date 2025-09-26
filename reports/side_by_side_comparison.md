@@ -20,6 +20,11 @@
 👉 **Recommendation**:  
 Use **Docling as the default** pipeline. For **low-quality scans or table-heavy pages**, enable **Google Document AI - OCR** as a fallback. 
 
+## 🧪 Comparison Method
+To fairly compare table structure and OCR quality against the open-source pipeline,  
+we used the script **`docling_one_page.py`** to parse **a single page (page 75) of the 10-K** containing a financial table.  
+The extracted JSON results were then compared with outputs from **Google Document AI - OCR** and **Google Document AI - Form Parser**.
+
 ## 🛠️ Implementation Note
 We implemented a combined script `docling_or_fallback_parser.py`.  
 - The parser first tries **Docling** (open-source pipeline).  
