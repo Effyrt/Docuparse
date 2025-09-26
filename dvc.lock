@@ -1,0 +1,33 @@
+schema: '2.0'
+stages:
+  download:
+    cmd: "python -c \"import os; os.makedirs('data/raw', exist_ok=True)\"\ncurl -L
+      -o data/raw/10-K.pdf \"https://drive.google.com/uc?export=download&id=1g2BpxM1T4lvxNrH3MCSJM0DNKLMi-J6B\"\
+      \ncurl -L -o data/raw/10-Q.pdf \"https://drive.google.com/uc?export=download&id=1mGuAxXvKaXbi9_4XHxOmbRd8AlKM_rxA\"\
+      \n"
+    outs:
+    - path: data/raw/10-K.pdf
+      hash: md5
+      md5: 953f154adb87bfd1e3b5cde844d7f614
+      size: 2481466
+    - path: data/raw/10-Q.pdf
+      hash: md5
+      md5: 2a4c5dbaecce1ffa56d80a32341e911f
+      size: 1919100
+  docling:
+    cmd: python src/parsers/docling_or_fallback_parser.py
+    deps:
+    - path: data/raw/10-K.pdf
+      hash: md5
+      md5: 953f154adb87bfd1e3b5cde844d7f614
+      size: 2481466
+    - path: data/raw/10-Q.pdf
+      hash: md5
+      md5: 2a4c5dbaecce1ffa56d80a32341e911f
+      size: 1919100
+    outs:
+    - path: data/parsed/docling/
+      hash: md5
+      md5: 2646d7e3856a231664d47fd3bf438531.dir
+      size: 140482
+      nfiles: 1
