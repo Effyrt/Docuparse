@@ -18,4 +18,4 @@
 - **Google Form Parser**: Provides the best structured tables (ideal for financial data), but has the highest cost.  
 
 👉 **Recommendation**:  
-Use **Docling as the default** pipeline. For **low-quality scans or table-heavy pages**, enable **Google Document AI** (OCR or Form Parser) as a fallback.  
+Use **Docling as the default** pipeline. For **low-quality scans or table-heavy pages**, enable **Google Document AI - OCR** as a fallback.  
