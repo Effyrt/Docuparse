@@ -16,6 +16,15 @@ import time
 import sys
 import yaml
 
+# Fix PIL compatibility issue with newer versions
+try:
+    from PIL import Image
+    # For newer Pillow versions, add compatibility
+    if not hasattr(Image, 'LINEAR'):
+        Image.LINEAR = Image.Resampling.BILINEAR
+except ImportError:
+    pass
+
 # PDF to image conversion
 import pdf2image
 from PIL import Image
@@ -385,14 +394,18 @@ class DualLayoutDetector:
         comparison = np.hstack([img1, img2])
         cv2.imwrite(str(self.comparison_dir / f"{pdf_name}_page_{page_num:04d}.png"), comparison)
     
-    def process_pdf(self, pdf_path: Path) -> Dict:
-        """Process ALL pages of PDF with both models"""
+    def process_pdf(self, pdf_path: Path, max_pages: int = None) -> Dict:
+        """Process pages of PDF with both models (limited by max_pages if specified)"""
         
         pdf_name = pdf_path.stem
-        logger.info(f"🔬 Processing: {pdf_name} (ALL pages)")
         
-        # Convert ALL pages to images
-        images = pdf2image.convert_from_path(str(pdf_path), dpi=200)
+        # Convert pages to images (limit if specified)
+        if max_pages:
+            images = pdf2image.convert_from_path(str(pdf_path), dpi=200, first_page=1, last_page=max_pages)
+            logger.info(f"🔬 Processing: {pdf_name} (first {max_pages} pages)")
+        else:
+            images = pdf2image.convert_from_path(str(pdf_path), dpi=200)
+            logger.info(f"🔬 Processing: {pdf_name} (ALL pages)")
         
         detectron2_performance = {
             "total_blocks": 0, "total_time": 0.0, "block_types": {}, "confidences": []
@@ -622,12 +635,12 @@ class DualLayoutDetector:
             }
         }
     
-    def process_single_10k_pdf(self) -> Dict:
+    def process_single_10k_pdf(self, max_pages: int = None) -> Dict:
         """Process single 10-K PDF for focused analysis"""
         
         # Target specific 10-K file
         raw_dir = Path("/Users/HemanthRayudu/Profession/Assignments/DAMG/Docuparse/data/raw")
-        target_pdf = raw_dir / "10-K" / "2024_meta.pdf"
+        target_pdf = raw_dir / "10-K" / "2024_meta_10-k.pdf"
         
         if not target_pdf.exists():
             logger.error(f"Target 10-K file not found: {target_pdf}")
@@ -658,7 +671,7 @@ class DualLayoutDetector:
             print(f"\n[{i}/{len(pdf_files)}] Processing: {pdf_path.name}")
             
             try:
-                result = self.process_pdf(pdf_path)
+                result = self.process_pdf(pdf_path, max_pages)
                 all_pdf_results.append(result)
                 
                 # Aggregate stats
@@ -877,13 +890,20 @@ def main():
     # Initialize detector
     detector = DualLayoutDetector()
     
+    # Get page limit
+    pages_to_process = layout_params.get("pages_to_process", "all")
+    max_pages = None
+    if pages_to_process != "all" and isinstance(pages_to_process, int):
+        max_pages = pages_to_process
+        print(f"🔧 Limiting layout detection to first {max_pages} pages")
+    
     # Process based on configuration
     if target_pdf == "all":
         # Process all PDFs (original behavior)
         results = detector.process_all_pdfs()  # This would need to be implemented
     else:
         # Process single 10-K PDF
-        results = detector.process_single_10k_pdf()
+        results = detector.process_single_10k_pdf(max_pages)
     
     if results and "individual_results" in results:
         total_pages = len(results["individual_results"][0]["pages"]) if results["individual_results"] else 0

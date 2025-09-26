@@ -37,7 +37,8 @@ class TextExtractor:
         ocr_threshold: float = 50,  # Minimum chars to consider page has text
         ocr_resolution: int = 300,
         save_word_boxes: bool = True,
-        output_dir: Optional[Path] = None
+        output_dir: Optional[Path] = None,
+        max_pages: int = None
     ):
         """
         Initialize the text extractor.
@@ -52,6 +53,7 @@ class TextExtractor:
         self.ocr_resolution = ocr_resolution
         self.save_word_boxes = save_word_boxes
         self.output_dir = Path(output_dir) if output_dir else Path("data/parsed/text")
+        self.max_pages = max_pages
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
         # Track statistics
@@ -175,7 +177,12 @@ class TextExtractor:
                 start, end = page_range
                 pages_to_process = range(start - 1, min(end, len(pdf.pages)))
             else:
-                pages_to_process = range(len(pdf.pages))
+                # Use max_pages if specified, otherwise process all pages
+                if self.max_pages:
+                    pages_to_process = range(min(self.max_pages, len(pdf.pages)))
+                    logger.info(f"🔧 Limiting processing to first {self.max_pages} pages")
+                else:
+                    pages_to_process = range(len(pdf.pages))
             
             # Process each page
             for i in pages_to_process:
@@ -351,7 +358,8 @@ def process_multiple_pdfs(
     raw_data_dir: Path = Path("data/raw"),
     output_dir: Path = Path("data/parsed/text"),
     ocr_threshold: float = 50,
-    ocr_resolution: int = 300
+    ocr_resolution: int = 300,
+    max_pages: int = None
 ) -> Dict:
     """
     Process all PDF files in the raw data directory structure.
@@ -393,7 +401,8 @@ def process_multiple_pdfs(
                 ocr_threshold=ocr_threshold,
                 ocr_resolution=ocr_resolution,
                 save_word_boxes=True,
-                output_dir=paths['pages_dir']  # Save individual pages in pages directory
+                output_dir=paths['pages_dir'],  # Save individual pages in pages directory
+                max_pages=max_pages
             )
             
             # Process PDF
@@ -474,13 +483,15 @@ def process_multiple_pdfs(
     k10_dir = raw_data_dir / "10-K"
     if k10_dir.exists():
         logger.info(f"Processing 10-K files from {k10_dir}")
-        for pdf_file in k10_dir.glob("*.pdf"):
-            logger.info(f"Processing 10-K: {pdf_file.name}")
+        # Process only the specific 10-K file for testing
+        target_pdf = k10_dir / "2024_meta_10-k.pdf"
+        if target_pdf.exists():
+            logger.info(f"Processing 10-K: {target_pdf.name}")
             
-            year = pdf_file.stem.split('_')[0] if '_' in pdf_file.stem else "unknown"
-            result = process_single_pdf(pdf_file, "10-K", year)
+            year = target_pdf.stem.split('_')[0] if '_' in target_pdf.stem else "unknown"
+            result = process_single_pdf(target_pdf, "10-K", year)
             
-            all_results[f"10-K_{year}_{pdf_file.stem}"] = result
+            all_results[f"10-K_{year}_{target_pdf.stem}"] = result
             total_stats['total_files'] += 1
             
             if result['success']:
@@ -490,30 +501,32 @@ def process_multiple_pdfs(
                 total_stats['total_processing_time'] += result['results']['statistics']['total_time']
             else:
                 total_stats['failed_files'] += 1
+        else:
+            logger.warning(f"Target PDF not found: {target_pdf}")
     
-    # Process 10-Q files
-    q10_dir = raw_data_dir / "10-Q"
-    if q10_dir.exists():
-        logger.info(f"Processing 10-Q files from {q10_dir}")
-        for pdf_file in q10_dir.glob("*.pdf"):
-            logger.info(f"Processing 10-Q: {pdf_file.name}")
-            
-            parts = pdf_file.stem.split('_')
-            year = parts[0] if len(parts) > 0 else "unknown"
-            quarter = parts[1] if len(parts) > 1 else "unknown"
-            
-            result = process_single_pdf(pdf_file, "10-Q", year, quarter)
-            
-            all_results[f"10-Q_{year}_{quarter}_{pdf_file.stem}"] = result
-            total_stats['total_files'] += 1
-            
-            if result['success']:
-                total_stats['successful_files'] += 1
-                total_stats['total_pages'] += result['results']['statistics']['total_pages']
-                total_stats['total_ocr_pages'] += result['results']['statistics']['ocr_pages']
-                total_stats['total_processing_time'] += result['results']['statistics']['total_time']
-            else:
-                total_stats['failed_files'] += 1
+    # Process 10-Q files (SKIPPED for testing - only processing 10-K)
+    # q10_dir = raw_data_dir / "10-Q"
+    # if q10_dir.exists():
+    #     logger.info(f"Processing 10-Q files from {q10_dir}")
+    #     for pdf_file in q10_dir.glob("*.pdf"):
+    #         logger.info(f"Processing 10-Q: {pdf_file.name}")
+    #         
+    #         parts = pdf_file.stem.split('_')
+    #         year = parts[0] if len(parts) > 0 else "unknown"
+    #         quarter = parts[1] if len(parts) > 1 else "unknown"
+    #         
+    #         result = process_single_pdf(pdf_file, "10-Q", year, quarter)
+    #         
+    #         all_results[f"10-Q_{year}_{quarter}_{pdf_file.stem}"] = result
+    #         total_stats['total_files'] += 1
+    #         
+    #         if result['success']:
+    #             total_stats['successful_files'] += 1
+    #             total_stats['total_pages'] += result['results']['statistics']['total_pages']
+    #             total_stats['total_ocr_pages'] += result['results']['statistics']['ocr_pages']
+    #             total_stats['total_processing_time'] += result['results']['statistics']['total_time']
+    #         else:
+    #             total_stats['failed_files'] += 1
     
     # Calculate final statistics
     total_stats['ocr_percentage'] = (total_stats['total_ocr_pages'] / total_stats['total_pages'] * 100) if total_stats['total_pages'] > 0 else 0
@@ -550,12 +563,32 @@ def process_multiple_pdfs(
 
 # Example usage
 if __name__ == "__main__":
+    import yaml
+    
+    # Load parameters from params.yaml
+    try:
+        with open("params.yaml", 'r') as f:
+            params = yaml.safe_load(f)
+        
+        # Get page limit from layout_detection config
+        pages_to_process = params.get('layout_detection', {}).get('pages_to_process', 'all')
+        if pages_to_process != 'all' and isinstance(pages_to_process, int):
+            max_pages = pages_to_process
+        else:
+            max_pages = None
+            
+        print(f"🔧 Processing with page limit: {max_pages if max_pages else 'all pages'}")
+    except FileNotFoundError:
+        print("⚠️  params.yaml not found, processing all pages")
+        max_pages = None
+    
     # Process all PDF files in the structured directory
     results = process_multiple_pdfs(
         raw_data_dir=Path("data/raw"),
         output_dir=Path("data/parsed/text"),
         ocr_threshold=50,
-        ocr_resolution=300
+        ocr_resolution=300,
+        max_pages=max_pages
     )
     
     # Print summary statistics

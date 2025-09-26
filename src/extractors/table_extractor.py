@@ -50,7 +50,8 @@ class TableExtractor:
         confidence_threshold: float = 0.5,
         min_table_size: Tuple[int, int] = (3, 3),  # Increased minimum size
         min_rows: int = 3,
-        min_cols: int = 3
+        min_cols: int = 3,
+        max_pages: int = None
     ):
         """
         Initialize the table extractor.
@@ -79,6 +80,7 @@ class TableExtractor:
         self.min_table_size = min_table_size
         self.min_rows = min_rows
         self.min_cols = min_cols
+        self.max_pages = max_pages
         
         # Track statistics
         self.stats = {
@@ -697,7 +699,12 @@ class TableExtractor:
                 start, end = page_range
                 pages_to_process = range(start - 1, min(end, len(pdf.pages)))
             else:
-                pages_to_process = range(len(pdf.pages))
+                # Use max_pages if specified, otherwise process all pages
+                if self.max_pages:
+                    pages_to_process = range(min(self.max_pages, len(pdf.pages)))
+                    logger.info(f"🔧 Limiting table extraction to first {self.max_pages} pages")
+                else:
+                    pages_to_process = range(len(pdf.pages))
             
         # Process each page
         for i in pages_to_process:
@@ -932,7 +939,8 @@ def process_multiple_pdfs_for_tables(
     raw_data_dir: Path = Path("data/raw"),
     output_dir: Path = Path("data/parsed/tables"),
     confidence_threshold: float = 0.3,
-    min_table_size: Tuple[int, int] = (3, 3)
+    min_table_size: Tuple[int, int] = (3, 3),
+    max_pages: int = None
 ) -> Dict:
     """
     Process all PDF files in the raw data directory structure for table extraction.
@@ -979,7 +987,8 @@ def process_multiple_pdfs_for_tables(
             extractor = TableExtractor(
                 output_dir=paths['tables_dir'],
                 confidence_threshold=confidence_threshold,
-                min_table_size=min_table_size
+                min_table_size=min_table_size,
+                max_pages=max_pages
             )
             
             # Process PDF
@@ -1093,11 +1102,11 @@ def process_multiple_pdfs_for_tables(
     # Process all PDF files dynamically
     logger.info(f"Processing all PDF files for tables from {raw_data_dir}")
     
-    # Find all PDF files in any subdirectory
-    pdf_files = list(raw_data_dir.rglob("*.pdf"))
+    # Process only one specific PDF file for testing
+    target_pdf = raw_data_dir / "10-K" / "2024_meta_10-k.pdf"
     
-    if not pdf_files:
-        logger.warning(f"No PDF files found in {raw_data_dir}")
+    if not target_pdf.exists():
+        logger.warning(f"Target PDF not found: {target_pdf}")
         return {
             'timestamp': datetime.utcnow().isoformat(),
             'total_statistics': total_stats,
@@ -1105,7 +1114,8 @@ def process_multiple_pdfs_for_tables(
             'output_directory': str(output_dir)
         }
     
-    logger.info(f"Found {len(pdf_files)} PDF files to process")
+    pdf_files = [target_pdf]
+    logger.info(f"Processing single PDF file: {target_pdf.name}")
     
     for pdf_file in pdf_files:
         # Get relative path for better organization
@@ -1149,16 +1159,33 @@ def process_multiple_pdfs_for_tables(
 
 # Example usage
 if __name__ == "__main__":
-    # Quick test with all pages of first PDF
-    logger.info("🚀 Starting table extraction test (all pages of first PDF)...")
+    import yaml
+    
+    # Load parameters from params.yaml
+    try:
+        with open("params.yaml", 'r') as f:
+            params = yaml.safe_load(f)
+        
+        # Get page limit from layout_detection config
+        pages_to_process = params.get('layout_detection', {}).get('pages_to_process', 'all')
+        if pages_to_process != 'all' and isinstance(pages_to_process, int):
+            max_pages = pages_to_process
+        else:
+            max_pages = None
+            
+        print(f"🔧 Table extraction with page limit: {max_pages if max_pages else 'all pages'}")
+    except FileNotFoundError:
+        print("⚠️  params.yaml not found, processing all pages")
+        max_pages = None
     
     # Process all PDFs directly
-    logger.info("🚀 Starting FULL table extraction for all PDFs...")
+    logger.info("🚀 Starting table extraction for all PDFs...")
     results = process_multiple_pdfs_for_tables(
         raw_data_dir=Path("data/raw"),
         output_dir=Path("data/parsed/tables"),
         confidence_threshold=0.3,  # Lower threshold for better detection
-        min_table_size=(3, 3)      # Higher minimum size to avoid headers
+        min_table_size=(3, 3),    # Higher minimum size to avoid headers
+        max_pages=max_pages
     )
     
     # Print comprehensive summary statistics

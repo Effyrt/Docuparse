@@ -392,52 +392,62 @@ class DoclingParser:
 
 
 if __name__ == "__main__":
-    # Initialize parser for analysis
-    parser = DoclingParser()
-
-    # Analyze existing JSON files for critical features
-    docling_dir = Path("data/parsed/docling")
-    json_files = list(docling_dir.glob("*.json"))
+    import yaml
     
-    if not json_files:
-        print(f"❌ No existing Docling JSON files found!")
-        print(f"📁 Expected files in: {docling_dir}")
+    # Load parameters from params.yaml
+    try:
+        with open("params.yaml", 'r') as f:
+            params = yaml.safe_load(f)
+        
+        # Get page limit from docling config
+        max_pages = params.get('docling', {}).get('max_pages', None)
+        if max_pages:
+            print(f"🔧 Docling processing with page limit: {max_pages}")
+        else:
+            print("🔧 Docling processing all pages")
+    except FileNotFoundError:
+        print("⚠️  params.yaml not found, processing all pages")
+        max_pages = None
+    
+    # Initialize parser for analysis
+    parser = DoclingParser(max_pages=max_pages)
+
+    # Process PDF files with Docling
+    print(f"🎯 DOCLING PDF PROCESSING")
+    print(f"📋 Processing PDFs with page limit: {max_pages if max_pages else 'all pages'}")
+    
+    # Find PDF files to process
+    raw_data_dir = Path("data/raw")
+    pdf_files = []
+    
+    # Process only one specific PDF file for testing
+    target_pdf = raw_data_dir / "10-K" / "2024_meta_10-k.pdf"
+    
+    if target_pdf.exists():
+        pdf_files = [target_pdf]
+    else:
+        print(f"❌ Target PDF not found: {target_pdf}")
+        print(f"📁 Expected file: 10-K/2024_meta_10-k.pdf")
         exit(1)
     
-    print(f"🎯 DOCLING CRITICAL FEATURES ANALYSIS")
-    print(f"📋 Focus: Reading Order, Table Merging, Formulas, Footnotes")
-    print(f"📁 Analyzing existing JSON files: {[f.name for f in json_files]}")
+    print(f"📁 Found {len(pdf_files)} PDF files to process")
     
-    for i, json_file in enumerate(json_files, 1):
+    # Process each PDF
+    for i, pdf_file in enumerate(pdf_files, 1):
         print(f"\n{'='*80}")
-        print(f"📄 DOCUMENT {i}/{len(json_files)}: {json_file.name}")
+        print(f"📄 PROCESSING {i}/{len(pdf_files)}: {pdf_file.name}")
         print(f"{'='*80}")
         
         try:
-            # Load existing JSON data
-            with open(json_file, 'r', encoding='utf-8') as f:
-                doc_dict = json.load(f)
-            
-            doc_name = doc_dict.get('name', json_file.stem)
-            
-            # Run critical features analysis
-            parser._analyze_critical_features(doc_dict, doc_name)
-            
-            # Generate Markdown if it doesn't exist
-            md_file = docling_dir / f"{json_file.stem}.md"
-            if not md_file.exists():
-                print(f"\n📝 Markdown file not found, checking for conversion capability...")
-                # Note: Markdown conversion requires the document object, not just JSON
-            else:
-                print(f"\n📝 Markdown file exists: {md_file}")
-            
-            print(f"✅ Analysis complete for {json_file.name}")
+            # Process PDF with Docling
+            parser.parse_pdf_comprehensive(str(pdf_file))
+            print(f"✅ Processing complete for {pdf_file.name}")
             
         except Exception as e:
-            print(f"❌ Error analyzing {json_file.name}: {str(e)}")
+            print(f"❌ Error processing {pdf_file.name}: {str(e)}")
             import traceback
             traceback.print_exc()
     
-    print(f"\n🎉 CRITICAL ANALYSIS COMPLETE!")
-    print(f"📊 Key findings on reading order, table merging, and formulas shown above")
-    print(f"📝 Compare with our custom pdfplumber+LayoutParser pipeline results")
+    print(f"\n🎉 DOCLING PROCESSING COMPLETE!")
+    print(f"📊 PDFs processed with Docling analysis")
+    print(f"📝 Check data/parsed/docling/ for JSON and Markdown outputs")

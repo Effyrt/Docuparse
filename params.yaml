@@ -10,7 +10,7 @@ download:
 # Layout Detection Configuration
 layout_detection:
   pages_to_process: "all"  # Options: "all", "first_5", or specific number
-  target_pdf: "2024_meta.pdf"  # Specific PDF to process, or "all" for all PDFs
+  target_pdf: "2024_meta_10-k.pdf"  # Specific PDF to process, or "all" for all PDFs
   enable_caption_extraction: true
   detectron2_confidence_threshold: 0.5
   layoutlmv3_ocr_confidence: 30
