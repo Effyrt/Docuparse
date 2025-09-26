@@ -1,0 +1,37 @@
+{
+  "AAPL": {
+    "cik": "0000320193",
+    "name": "Apple Inc.",
+    "ticker": "AAPL"
+  },
+  "GOOGL": {
+    "cik": "0001652044",
+    "name": "Alphabet Inc.",
+    "ticker": "GOOGL"
+  },
+  "MSFT": {
+    "cik": "0000789019",
+    "name": "MICROSOFT CORP",
+    "ticker": "MSFT"
+  },
+  "AMZN": {
+    "cik": "0001018724",
+    "name": "AMAZON COM INC",
+    "ticker": "AMZN"
+  },
+  "META": {
+    "cik": "0001326801",
+    "name": "Meta Platforms, Inc.",
+    "ticker": "META"
+  },
+  "TSLA": {
+    "cik": "0001318605",
+    "name": "Tesla, Inc.",
+    "ticker": "TSLA"
+  },
+  "NVDA": {
+    "cik": "0001045810",
+    "name": "NVIDIA CORP",
+    "ticker": "NVDA"
+  }
+}
