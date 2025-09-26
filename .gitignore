@@ -6,6 +6,11 @@ __pycache__/
 # Analysis reports
 table_extraction_analysis.md
 
+# Documentation files (auto-generated)
+CODELABS.md
+PROJECT_STRUCTURE.md
+docs/DOCUPARSE_PRESENTATION_SLIDES.txt
+
 # C extensions
 *.so
 
@@ -208,3 +213,4 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+.DS_Store

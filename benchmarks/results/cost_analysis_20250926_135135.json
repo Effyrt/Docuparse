@@ -1,0 +1,219 @@
+{
+  "analysis_info": {
+    "timestamp": "2025-09-26T13:51:35.475532",
+    "pages_analyzed": 1000,
+    "pricing_date": "2024-09-26",
+    "note": "Costs based on public pricing - actual costs may vary"
+  },
+  "cloud_cost_estimates": {
+    "volume_info": {
+      "total_pages": 1000,
+      "estimated_documents": 20,
+      "avg_pages_per_document": 50.0,
+      "timestamp": "2025-09-26T13:51:35.475539"
+    },
+    "service_costs": {
+      "aws_textract": {
+        "detect_text": {
+          "cost_per_page": 0.0015,
+          "total_cost_usd": 1.5,
+          "cost_per_document": 0.075,
+          "monthly_cost_1000_pages": 1.5
+        },
+        "analyze_document": {
+          "cost_per_page": 0.05,
+          "total_cost_usd": 50.0,
+          "cost_per_document": 2.5,
+          "monthly_cost_1000_pages": 50.0
+        },
+        "analyze_expense": {
+          "cost_per_page": 0.05,
+          "total_cost_usd": 50.0,
+          "cost_per_document": 2.5,
+          "monthly_cost_1000_pages": 50.0
+        },
+        "analyze_id": {
+          "cost_per_page": 0.04,
+          "total_cost_usd": 40.0,
+          "cost_per_document": 2.0,
+          "monthly_cost_1000_pages": 40.0
+        },
+        "detect_text_queries": {
+          "cost_per_page": 0.0065,
+          "total_cost_usd": 6.5,
+          "cost_per_document": 0.325,
+          "monthly_cost_1000_pages": 6.5
+        }
+      },
+      "google_document_ai": {
+        "ocr_processor": {
+          "cost_per_page": 0.0015,
+          "total_cost_usd": 1.5,
+          "cost_per_document": 0.075,
+          "monthly_cost_1000_pages": 1.5
+        },
+        "form_parser": {
+          "cost_per_page": 0.05,
+          "total_cost_usd": 50.0,
+          "cost_per_document": 2.5,
+          "monthly_cost_1000_pages": 50.0
+        },
+        "document_splitter": {
+          "cost_per_page": 0.001,
+          "total_cost_usd": 1.0,
+          "cost_per_document": 0.05,
+          "monthly_cost_1000_pages": 1.0
+        },
+        "layout_parser": {
+          "cost_per_page": 0.01,
+          "total_cost_usd": 10.0,
+          "cost_per_document": 0.5,
+          "monthly_cost_1000_pages": 10.0
+        },
+        "specialized_parser": {
+          "cost_per_page": 0.1,
+          "total_cost_usd": 100.0,
+          "cost_per_document": 5.0,
+          "monthly_cost_1000_pages": 100.0
+        }
+      },
+      "azure_form_recognizer": {
+        "layout": {
+          "cost_per_page": 0.01,
+          "total_cost_usd": 10.0,
+          "cost_per_document": 0.5,
+          "monthly_cost_1000_pages": 10.0
+        },
+        "general_document": {
+          "cost_per_page": 0.05,
+          "total_cost_usd": 50.0,
+          "cost_per_document": 2.5,
+          "monthly_cost_1000_pages": 50.0
+        },
+        "prebuilt_invoice": {
+          "cost_per_page": 0.05,
+          "total_cost_usd": 50.0,
+          "cost_per_document": 2.5,
+          "monthly_cost_1000_pages": 50.0
+        },
+        "prebuilt_receipt": {
+          "cost_per_page": 0.05,
+          "total_cost_usd": 50.0,
+          "cost_per_document": 2.5,
+          "monthly_cost_1000_pages": 50.0
+        },
+        "custom_model": {
+          "cost_per_page": 0.05,
+          "total_cost_usd": 50.0,
+          "cost_per_document": 2.5,
+          "monthly_cost_1000_pages": 50.0
+        }
+      }
+    },
+    "comparison": {
+      "lowest_cost_basic": {
+        "service": "aws_textract_detect_text",
+        "cost_usd": 1.5
+      },
+      "lowest_cost_advanced": {
+        "service": "aws_textract_analyze_document",
+        "cost_usd": 50.0
+      },
+      "cost_range_basic": {
+        "min_usd": 1.5,
+        "max_usd": 10.0,
+        "savings_vs_highest": 85.0
+      },
+      "cost_range_advanced": {
+        "min_usd": 50.0,
+        "max_usd": 50.0,
+        "savings_vs_highest": 0.0
+      },
+      "service_rankings": [
+        {
+          "rank": 1,
+          "service": "aws_textract_detect_text",
+          "cost_usd": 1.5
+        },
+        {
+          "rank": 2,
+          "service": "google_document_ai_ocr_processor",
+          "cost_usd": 1.5
+        },
+        {
+          "rank": 3,
+          "service": "azure_form_recognizer_layout",
+          "cost_usd": 10.0
+        },
+        {
+          "rank": 4,
+          "service": "aws_textract_analyze_document",
+          "cost_usd": 50.0
+        },
+        {
+          "rank": 5,
+          "service": "google_document_ai_form_parser",
+          "cost_usd": 50.0
+        },
+        {
+          "rank": 6,
+          "service": "azure_form_recognizer_general_document",
+          "cost_usd": 50.0
+        }
+      ]
+    },
+    "recommendations": [
+      "For medium volumes (1K-10K pages), consider batch processing discounts",
+      "Most cost-effective basic option: aws_textract_detect_text at $1.5",
+      "Most cost-effective advanced option: aws_textract_analyze_document at $50.0",
+      "Advanced features cost 10x+ more - evaluate if complexity justifies the cost"
+    ],
+    "additional_costs": {
+      "estimated_output_size_gb": 0.098,
+      "storage_cost_per_month_usd": 0.002,
+      "data_transfer_cost_usd": 0.009,
+      "api_request_cost_usd": 0.008
+    }
+  },
+  "infrastructure_comparison": {
+    "cloud_vs_open_source": {},
+    "break_even_analysis": {
+      "cloud_cost_usd": 1.5,
+      "cheapest_infrastructure_cost_usd": 0.03,
+      "savings_with_infrastructure": 1.47,
+      "cost_ratio_cloud_vs_infrastructure": 50.0,
+      "break_even_volume_pages": 50000
+    },
+    "infrastructure_costs": {
+      "cpu_optimized": {
+        "compute_cost_usd": 0.02,
+        "storage_cost_usd": 0.002,
+        "data_transfer_cost_usd": 0.009,
+        "total_cost_usd": 0.03,
+        "processing_hours": 0.11,
+        "description": "CPU-optimized instance"
+      },
+      "gpu_accelerated": {
+        "compute_cost_usd": 0.06,
+        "storage_cost_usd": 0.002,
+        "data_transfer_cost_usd": 0.009,
+        "total_cost_usd": 0.07,
+        "processing_hours": 0.11,
+        "description": "GPU-accelerated instance"
+      },
+      "memory_optimized": {
+        "compute_cost_usd": 0.02,
+        "storage_cost_usd": 0.002,
+        "data_transfer_cost_usd": 0.009,
+        "total_cost_usd": 0.03,
+        "processing_hours": 0.11,
+        "description": "Memory-optimized instance"
+      }
+    },
+    "recommendations": [
+      "Open-source infrastructure is significantly cheaper (>50% savings)",
+      "Consider development and maintenance costs when comparing",
+      "Cloud services offer faster time-to-market and managed infrastructure"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "timestamp": "2025-09-26T13:45:00Z",
+  "evaluations": [
+    {
+      "file": "meta_2024_10k_page_35_table.csv",
+      "page": 35,
+      "section": "Consolidated Statements of Income",
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "cell_accuracy": 1.0,
+        "structure_accuracy": 1.0,
+        "true_positives": 52,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "total_cells": 52,
+        "exact_match": true
+      },
+      "thresholds": {
+        "precision_passed": true,
+        "recall_passed": true,
+        "f1_passed": true
+      }
+    },
+    {
+      "file": "meta_2024_10k_page_87_table.csv",
+      "page": 87,
+      "section": "Risk Factors Summary",
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "cell_accuracy": 1.0,
+        "structure_accuracy": 1.0,
+        "true_positives": 24,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "total_cells": 24,
+        "exact_match": true
+      },
+      "thresholds": {
+        "precision_passed": true,
+        "recall_passed": true,
+        "f1_passed": true
+      }
+    }
+  ],
+  "summary": {
+    "total_tables": 2,
+    "avg_precision": 1.0,
+    "avg_recall": 1.0,
+    "avg_f1": 1.0,
+    "avg_cell_accuracy": 1.0,
+    "tables_passed": 2,
+    "tables_failed": 0
+  }
+}

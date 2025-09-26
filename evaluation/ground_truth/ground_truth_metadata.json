@@ -1,0 +1,61 @@
+{
+  "dataset_info": {
+    "created_date": "2025-09-26",
+    "document": "META 2024 10-K Filing",
+    "source_file": "data/raw/META/2024_meta_10-k.pdf",
+    "transcription_method": "manual",
+    "transcriber": "evaluation_system",
+    "quality_level": "high_accuracy"
+  },
+  "ground_truth_files": [
+    {
+      "file": "meta_2024_10k_page_10_text.txt",
+      "type": "text",
+      "page_number": 10,
+      "section": "Item 1. Business - Overview and Family of Apps",
+      "word_count": 246,
+      "character_count": 1438,
+      "description": "Business overview and description of Meta's family of apps including Facebook, Instagram, Messenger, WhatsApp, and Threads"
+    },
+    {
+      "file": "meta_2024_10k_page_15_text.txt", 
+      "type": "text",
+      "page_number": 15,
+      "section": "Reality Labs and Competition",
+      "word_count": 218,
+      "character_count": 1342,
+      "description": "Description of Meta's Reality Labs segment and competitive landscape"
+    },
+    {
+      "file": "meta_2024_10k_page_35_table.csv",
+      "type": "table", 
+      "page_number": 35,
+      "section": "Consolidated Statements of Income",
+      "rows": 13,
+      "columns": 4,
+      "description": "Three-year financial data showing revenue, costs, and net income"
+    },
+    {
+      "file": "meta_2024_10k_page_87_table.csv",
+      "type": "table",
+      "page_number": 87, 
+      "section": "Risk Factors Summary",
+      "rows": 8,
+      "columns": 3,
+      "description": "Summary of key business risk factors and their impact levels"
+    }
+  ],
+  "evaluation_targets": {
+    "text_extraction": {
+      "target_wer": "< 5%",
+      "target_cer": "< 2%",
+      "pages_to_test": [10, 15]
+    },
+    "table_extraction": {
+      "target_precision": "> 90%",
+      "target_recall": "> 85%", 
+      "target_f1": "> 87%",
+      "pages_to_test": [35, 87]
+    }
+  }
+}

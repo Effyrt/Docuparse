@@ -1,0 +1,614 @@
+{
+  "evaluation_info": {
+    "timestamp": "2025-09-26T13:25:40.092813",
+    "evaluation_id": "eval_20250926_132540",
+    "version": "1.0.0"
+  },
+  "text_accuracy": {
+    "timestamp": "2025-09-26T13:30:00Z",
+    "evaluations": [
+      {
+        "file": "meta_2024_10k_page_10_text.txt",
+        "page": 10,
+        "section": "Item 1. Business - Overview and Family of Apps",
+        "metrics": {
+          "wer": 0.0272,
+          "cer": 0.0042,
+          "word_count": 294,
+          "char_count": 1900,
+          "substitutions": 8,
+          "deletions": 0,
+          "insertions": 0,
+          "exact_match": false
+        },
+        "thresholds": {
+          "wer_passed": true,
+          "cer_passed": true
+        }
+      },
+      {
+        "file": "meta_2024_10k_page_15_text.txt",
+        "page": 15,
+        "section": "Reality Labs and Competition",
+        "metrics": {
+          "wer": 0.0247,
+          "cer": 0.0037,
+          "word_count": 283,
+          "char_count": 1906,
+          "substitutions": 7,
+          "deletions": 0,
+          "insertions": 0,
+          "exact_match": false
+        },
+        "thresholds": {
+          "wer_passed": true,
+          "cer_passed": true
+        }
+      }
+    ],
+    "summary": {
+      "total_files": 2,
+      "avg_wer": 0.026,
+      "avg_cer": 0.0039,
+      "files_passed": 2,
+      "files_failed": 0
+    }
+  },
+  "table_accuracy": {
+    "timestamp": "2025-09-26T13:45:00Z",
+    "evaluations": [
+      {
+        "file": "meta_2024_10k_page_35_table.csv",
+        "page": 35,
+        "section": "Consolidated Statements of Income",
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "cell_accuracy": 1.0,
+          "structure_accuracy": 1.0,
+          "true_positives": 52,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "total_cells": 52,
+          "exact_match": true
+        },
+        "thresholds": {
+          "precision_passed": true,
+          "recall_passed": true,
+          "f1_passed": true
+        }
+      },
+      {
+        "file": "meta_2024_10k_page_87_table.csv",
+        "page": 87,
+        "section": "Risk Factors Summary",
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "cell_accuracy": 1.0,
+          "structure_accuracy": 1.0,
+          "true_positives": 24,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "total_cells": 24,
+          "exact_match": true
+        },
+        "thresholds": {
+          "precision_passed": true,
+          "recall_passed": true,
+          "f1_passed": true
+        }
+      }
+    ],
+    "summary": {
+      "total_tables": 2,
+      "avg_precision": 1.0,
+      "avg_recall": 1.0,
+      "avg_f1": 1.0,
+      "avg_cell_accuracy": 1.0,
+      "tables_passed": 2,
+      "tables_failed": 0
+    }
+  },
+  "distribution_analysis": {
+    "text_distributions": {
+      "timestamp": "2025-09-26T13:25:42.263565",
+      "type": "text_distributions",
+      "raw_data": {
+        "chunk_lengths": [
+          1913,
+          1913,
+          1913,
+          1934,
+          1913,
+          956,
+          2014
+        ],
+        "word_counts": [
+          294,
+          283,
+          294,
+          294,
+          294,
+          147,
+          309
+        ],
+        "char_counts": [
+          1913,
+          1913,
+          1913,
+          1934,
+          1913,
+          956,
+          2014
+        ],
+        "sentence_counts": [
+          21,
+          11,
+          21,
+          21,
+          21,
+          10,
+          23
+        ],
+        "numeric_token_ratios": [
+          0.01020408163265306,
+          0.014134275618374558,
+          0.01020408163265306,
+          0.01020408163265306,
+          0.01020408163265306,
+          0.02040816326530612,
+          0.012944983818770227
+        ],
+        "capitalization_ratios": [
+          0.17687074829931973,
+          0.13780918727915195,
+          0.17687074829931973,
+          0.17687074829931973,
+          0.17687074829931973,
+          0.25170068027210885,
+          0.18770226537216828
+        ],
+        "punctuation_ratios": [
+          0.028750653423941452,
+          0.03293256664924203,
+          0.028750653423941452,
+          0.02843846949327818,
+          0.028750653423941452,
+          0.03347280334728033,
+          0.02830188679245283
+        ],
+        "avg_word_lengths": [
+          5.4727891156462585,
+          5.738515901060071,
+          5.4727891156462585,
+          5.4727891156462585,
+          5.4727891156462585,
+          5.510204081632653,
+          5.475728155339806
+        ],
+        "line_counts": [
+          22,
+          14,
+          22,
+          22,
+          1,
+          1,
+          28
+        ],
+        "paragraph_counts": [
+          11,
+          7,
+          11,
+          11,
+          1,
+          1,
+          14
+        ]
+      },
+      "statistics": {
+        "chunk_lengths": {
+          "mean": 1793.7142857142858,
+          "std": 343.6957600992542,
+          "median": 1913.0,
+          "q25": 1913.0,
+          "q75": 1923.5,
+          "min": 956.0,
+          "max": 2014.0,
+          "count": 7
+        },
+        "word_counts": {
+          "mean": 273.57142857142856,
+          "std": 52.14500974030331,
+          "median": 294.0,
+          "q25": 288.5,
+          "q75": 294.0,
+          "min": 147.0,
+          "max": 309.0,
+          "count": 7
+        },
+        "char_counts": {
+          "mean": 1793.7142857142858,
+          "std": 343.6957600992542,
+          "median": 1913.0,
+          "q25": 1913.0,
+          "q75": 1923.5,
+          "min": 956.0,
+          "max": 2014.0,
+          "count": 7
+        },
+        "sentence_counts": {
+          "mean": 18.285714285714285,
+          "std": 4.977500397195527,
+          "median": 21.0,
+          "q25": 16.0,
+          "q75": 21.0,
+          "min": 10.0,
+          "max": 23.0,
+          "count": 7
+        },
+        "numeric_token_ratios": {
+          "mean": 0.01261482131900902,
+          "std": 0.0035132522718072045,
+          "median": 0.01020408163265306,
+          "q25": 0.01020408163265306,
+          "q75": 0.013539629718572394,
+          "min": 0.01020408163265306,
+          "max": 0.02040816326530612,
+          "count": 7
+        },
+        "capitalization_ratios": {
+          "mean": 0.18352787516010113,
+          "std": 0.03146976931278694,
+          "median": 0.17687074829931973,
+          "q25": 0.17687074829931973,
+          "q75": 0.182286506835744,
+          "min": 0.13780918727915195,
+          "max": 0.25170068027210885,
+          "count": 7
+        },
+        "punctuation_ratios": {
+          "mean": 0.029913955222011103,
+          "std": 0.0020912419722257563,
+          "median": 0.028750653423941452,
+          "q25": 0.028594561458609814,
+          "q75": 0.030841610036591742,
+          "min": 0.02830188679245283,
+          "max": 0.03347280334728033,
+          "count": 7
+        },
+        "avg_word_lengths": {
+          "mean": 5.516514942945366,
+          "std": 0.09152330406553115,
+          "median": 5.4727891156462585,
+          "q25": 5.4727891156462585,
+          "q75": 5.49296611848623,
+          "min": 5.4727891156462585,
+          "max": 5.738515901060071,
+          "count": 7
+        },
+        "line_counts": {
+          "mean": 15.714285714285714,
+          "std": 10.038700623291923,
+          "median": 22.0,
+          "q25": 7.5,
+          "q75": 22.0,
+          "min": 1.0,
+          "max": 28.0,
+          "count": 7
+        },
+        "paragraph_counts": {
+          "mean": 8.0,
+          "std": 4.810702354423639,
+          "median": 11.0,
+          "q25": 4.0,
+          "q75": 11.0,
+          "min": 1.0,
+          "max": 14.0,
+          "count": 7
+        }
+      }
+    },
+    "table_distributions": {
+      "timestamp": "2025-09-26T13:25:42.264562",
+      "type": "table_distributions",
+      "raw_data": {
+        "table_row_counts": [
+          9,
+          14
+        ],
+        "table_col_counts": [
+          5,
+          4
+        ],
+        "table_cell_counts": [
+          45,
+          56
+        ],
+        "numeric_cell_ratios": [
+          0.0,
+          0.75
+        ],
+        "empty_cell_ratios": [
+          0.35555555555555557,
+          0.0
+        ],
+        "avg_cell_lengths": [
+          31.75862068965517,
+          8.25
+        ],
+        "table_densities": [
+          0.6444444444444445,
+          1.0
+        ],
+        "header_confidence_scores": [
+          1.0,
+          1.0
+        ]
+      },
+      "statistics": {
+        "table_row_counts": {
+          "mean": 11.5,
+          "std": 2.5,
+          "median": 11.5,
+          "q25": 10.25,
+          "q75": 12.75,
+          "min": 9.0,
+          "max": 14.0,
+          "count": 2
+        },
+        "table_col_counts": {
+          "mean": 4.5,
+          "std": 0.5,
+          "median": 4.5,
+          "q25": 4.25,
+          "q75": 4.75,
+          "min": 4.0,
+          "max": 5.0,
+          "count": 2
+        },
+        "table_cell_counts": {
+          "mean": 50.5,
+          "std": 5.5,
+          "median": 50.5,
+          "q25": 47.75,
+          "q75": 53.25,
+          "min": 45.0,
+          "max": 56.0,
+          "count": 2
+        },
+        "numeric_cell_ratios": {
+          "mean": 0.375,
+          "std": 0.375,
+          "median": 0.375,
+          "q25": 0.1875,
+          "q75": 0.5625,
+          "min": 0.0,
+          "max": 0.75,
+          "count": 2
+        },
+        "empty_cell_ratios": {
+          "mean": 0.17777777777777778,
+          "std": 0.17777777777777778,
+          "median": 0.17777777777777778,
+          "q25": 0.08888888888888889,
+          "q75": 0.26666666666666666,
+          "min": 0.0,
+          "max": 0.35555555555555557,
+          "count": 2
+        },
+        "avg_cell_lengths": {
+          "mean": 20.004310344827587,
+          "std": 11.754310344827587,
+          "median": 20.004310344827587,
+          "q25": 14.127155172413794,
+          "q75": 25.881465517241377,
+          "min": 8.25,
+          "max": 31.75862068965517,
+          "count": 2
+        },
+        "table_densities": {
+          "mean": 0.8222222222222222,
+          "std": 0.17777777777777776,
+          "median": 0.8222222222222222,
+          "q25": 0.7333333333333334,
+          "q75": 0.9111111111111111,
+          "min": 0.6444444444444445,
+          "max": 1.0,
+          "count": 2
+        },
+        "header_confidence_scores": {
+          "mean": 1.0,
+          "std": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "count": 2
+        }
+      }
+    }
+  },
+  "dvc_metrics": {
+    "timestamp": "2025-09-26T13:25:46.107884",
+    "text_extraction": {
+      "avg_wer": 0.026,
+      "avg_cer": 0.0039,
+      "files_evaluated": 2,
+      "files_passed": 2,
+      "pass_rate": 1.0
+    },
+    "table_extraction": {
+      "avg_precision": 1.0,
+      "avg_recall": 1.0,
+      "avg_f1": 1.0,
+      "avg_cell_accuracy": 1.0,
+      "tables_evaluated": 2,
+      "tables_passed": 2,
+      "pass_rate": 1.0
+    },
+    "overall": {
+      "total_evaluations": 4,
+      "total_passed": 4,
+      "overall_pass_rate": 1.0
+    },
+    "detailed_results": {
+      "text_evaluations": [
+        {
+          "file": "meta_2024_10k_page_10_text.txt",
+          "page": 10,
+          "section": "Item 1. Business - Overview and Family of Apps",
+          "metrics": {
+            "wer": 0.0272,
+            "cer": 0.0042,
+            "word_count": 294,
+            "char_count": 1900,
+            "substitutions": 8,
+            "deletions": 0,
+            "insertions": 0,
+            "exact_match": false
+          },
+          "thresholds": {
+            "wer_passed": true,
+            "cer_passed": true
+          }
+        },
+        {
+          "file": "meta_2024_10k_page_15_text.txt",
+          "page": 15,
+          "section": "Reality Labs and Competition",
+          "metrics": {
+            "wer": 0.0247,
+            "cer": 0.0037,
+            "word_count": 283,
+            "char_count": 1906,
+            "substitutions": 7,
+            "deletions": 0,
+            "insertions": 0,
+            "exact_match": false
+          },
+          "thresholds": {
+            "wer_passed": true,
+            "cer_passed": true
+          }
+        }
+      ],
+      "table_evaluations": [
+        {
+          "file": "meta_2024_10k_page_35_table.csv",
+          "page": 35,
+          "section": "Consolidated Statements of Income",
+          "metrics": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "cell_accuracy": 1.0,
+            "structure_accuracy": 1.0,
+            "true_positives": 52,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "total_cells": 52,
+            "exact_match": true
+          },
+          "thresholds": {
+            "precision_passed": true,
+            "recall_passed": true,
+            "f1_passed": true
+          }
+        },
+        {
+          "file": "meta_2024_10k_page_87_table.csv",
+          "page": 87,
+          "section": "Risk Factors Summary",
+          "metrics": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "cell_accuracy": 1.0,
+            "structure_accuracy": 1.0,
+            "true_positives": 24,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "total_cells": 24,
+            "exact_match": true
+          },
+          "thresholds": {
+            "precision_passed": true,
+            "recall_passed": true,
+            "f1_passed": true
+          }
+        }
+      ]
+    }
+  },
+  "regression_analysis": {
+    "timestamp": "2025-09-26T13:25:46.108594",
+    "status": "no_regression",
+    "regressions": [],
+    "warnings": [],
+    "baseline": {
+      "text_avg_wer": 0.026,
+      "text_avg_cer": 0.0039,
+      "text_pass_rate": 1.0,
+      "table_avg_precision": 1.0,
+      "table_avg_recall": 1.0,
+      "table_avg_f1": 1.0,
+      "table_pass_rate": 1.0,
+      "overall_pass_rate": 1.0
+    },
+    "current": {
+      "text_avg_wer": 0.026,
+      "text_avg_cer": 0.0039,
+      "text_pass_rate": 1.0,
+      "table_avg_precision": 1.0,
+      "table_avg_recall": 1.0,
+      "table_avg_f1": 1.0,
+      "table_pass_rate": 1.0,
+      "overall_pass_rate": 1.0,
+      "total_evaluations": 4
+    },
+    "tolerance": 5.0,
+    "summary": {
+      "total_regressions": 0,
+      "total_warnings": 0,
+      "baseline_runs": 1
+    }
+  },
+  "summary": {
+    "overall_status": "success",
+    "evaluation_timestamp": "2025-09-26T13:25:40.092813",
+    "metrics_summary": {
+      "text_metrics": {
+        "avg_wer": 0.026,
+        "avg_cer": 0.0039,
+        "files_passed": 2,
+        "total_files": 2,
+        "pass_rate": 1.0
+      },
+      "table_metrics": {
+        "avg_precision": 1.0,
+        "avg_recall": 1.0,
+        "avg_f1": 1.0,
+        "tables_passed": 2,
+        "total_tables": 2,
+        "pass_rate": 1.0
+      },
+      "combined_metrics": {
+        "total_evaluations": 4,
+        "total_passed": 4,
+        "overall_pass_rate": 1.0
+      }
+    },
+    "quality_assessment": {
+      "overall_quality": "excellent",
+      "text_quality": "good",
+      "table_quality": "good",
+      "stability": "stable"
+    },
+    "recommendations": [],
+    "alerts": []
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "evaluation_info": {
+    "timestamp": "2025-09-26T13:24:24.601544",
+    "evaluation_id": "eval_20250926_132424",
+    "version": "1.0.0"
+  },
+  "text_accuracy": {
+    "timestamp": "2025-09-26T13:30:00Z",
+    "evaluations": [
+      {
+        "file": "meta_2024_10k_page_10_text.txt",
+        "page": 10,
+        "section": "Item 1. Business - Overview and Family of Apps",
+        "metrics": {
+          "wer": 0.0272,
+          "cer": 0.0042,
+          "word_count": 294,
+          "char_count": 1900,
+          "substitutions": 8,
+          "deletions": 0,
+          "insertions": 0,
+          "exact_match": false
+        },
+        "thresholds": {
+          "wer_passed": true,
+          "cer_passed": true
+        }
+      },
+      {
+        "file": "meta_2024_10k_page_15_text.txt",
+        "page": 15,
+        "section": "Reality Labs and Competition",
+        "metrics": {
+          "wer": 0.0247,
+          "cer": 0.0037,
+          "word_count": 283,
+          "char_count": 1906,
+          "substitutions": 7,
+          "deletions": 0,
+          "insertions": 0,
+          "exact_match": false
+        },
+        "thresholds": {
+          "wer_passed": true,
+          "cer_passed": true
+        }
+      }
+    ],
+    "summary": {
+      "total_files": 2,
+      "avg_wer": 0.026,
+      "avg_cer": 0.0039,
+      "files_passed": 2,
+      "files_failed": 0
+    }
+  },
+  "table_accuracy": {
+    "timestamp": "2025-09-26T13:45:00Z",
+    "evaluations": [
+      {
+        "file": "meta_2024_10k_page_35_table.csv",
+        "page": 35,
+        "section": "Consolidated Statements of Income",
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "cell_accuracy": 1.0,
+          "structure_accuracy": 1.0,
+          "true_positives": 52,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "total_cells": 52,
+          "exact_match": true
+        },
+        "thresholds": {
+          "precision_passed": true,
+          "recall_passed": true,
+          "f1_passed": true
+        }
+      },
+      {
+        "file": "meta_2024_10k_page_87_table.csv",
+        "page": 87,
+        "section": "Risk Factors Summary",
+        "metrics": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "cell_accuracy": 1.0,
+          "structure_accuracy": 1.0,
+          "true_positives": 24,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "total_cells": 24,
+          "exact_match": true
+        },
+        "thresholds": {
+          "precision_passed": true,
+          "recall_passed": true,
+          "f1_passed": true
+        }
+      }
+    ],
+    "summary": {
+      "total_tables": 2,
+      "avg_precision": 1.0,
+      "avg_recall": 1.0,
+      "avg_f1": 1.0,
+      "avg_cell_accuracy": 1.0,
+      "tables_passed": 2,
+      "tables_failed": 0
+    }
+  },
+  "distribution_analysis": {},
+  "dvc_metrics": {},
+  "regression_analysis": {},
+  "summary": {
+    "overall_status": "error",
+    "error_message": "name 'text_stats' is not defined",
+    "quality_assessment": {
+      "overall_quality": "unknown"
+    },
+    "metrics_summary": {
+      "combined_metrics": {
+        "overall_pass_rate": 0
+      }
+    },
+    "recommendations": [
+      "Fix evaluation error before proceeding"
+    ],
+    "alerts": [
+      {
+        "type": "system",
+        "severity": "critical",
+        "message": "Evaluation failed: name 'text_stats' is not defined"
+      }
+    ]
+  },
+  "error": "name 'text_stats' is not defined"
+}

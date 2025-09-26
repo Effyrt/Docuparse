@@ -1,0 +1,201 @@
+{
+  "benchmark_info": {
+    "timestamp": "2025-09-26T14:20:27.426559",
+    "system_info": {
+      "cpu_count_physical": 8,
+      "cpu_count_logical": 8,
+      "cpu_freq_current_mhz": 3504,
+      "total_memory_gb": 8.0,
+      "available_memory_gb": 2.5,
+      "memory_usage_percent": 68.7,
+      "platform": "darwin",
+      "python_version": "3.9.10"
+    },
+    "note": "REAL measurements using correct API methods",
+    "max_pages_per_stage": 10
+  },
+  "stage_benchmarks": {
+    "text_extraction": {
+      "stage_name": "text_extraction_REAL",
+      "method": "TextExtractor.process_pdf()",
+      "pages_processed": 0,
+      "pages_failed": 0,
+      "total_runtime_seconds": 0.011561870574951172,
+      "memory_usage": {
+        "peak_memory_mb": 70.19,
+        "memory_delta_mb": 0.0,
+        "peak_traced_memory_mb": 0.15
+      },
+      "per_page_timings": [],
+      "failures": [
+        {
+          "file": "2024_meta_10-q.pdf",
+          "error": "too many values to unpack (expected 2)",
+          "timestamp": "2025-09-26T14:20:27.895318",
+          "type": "file_level"
+        }
+      ],
+      "extraction_stats": {},
+      "avg_time_per_page": 0.011561870574951172
+    },
+    "table_extraction": {
+      "stage_name": "table_extraction_REAL",
+      "method": "TableExtractor.hybrid_extract()",
+      "pages_processed": 5,
+      "tables_found": 0,
+      "pages_failed": 0,
+      "total_runtime_seconds": 9.915301084518433,
+      "memory_usage": {
+        "peak_memory_mb": 188.75,
+        "memory_delta_mb": 71.09,
+        "peak_traced_memory_mb": 22.87
+      },
+      "per_page_timings": [
+        {
+          "page": 1,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 1.8868672847747803,
+          "tables_found": 0,
+          "success": true
+        },
+        {
+          "page": 2,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 1.4603779315948486,
+          "tables_found": 0,
+          "success": true
+        },
+        {
+          "page": 3,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 1.6496379375457764,
+          "tables_found": 0,
+          "success": true
+        },
+        {
+          "page": 4,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 3.02744722366333,
+          "tables_found": 0,
+          "success": true
+        },
+        {
+          "page": 5,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 1.8240339756011963,
+          "tables_found": 0,
+          "success": true
+        }
+      ],
+      "failures": [],
+      "avg_time_per_page": 1.9830602169036866
+    },
+    "docling": {
+      "stage_name": "docling_REAL",
+      "method": "docling.DocumentConverter()",
+      "pages_processed": 5,
+      "pages_failed": 0,
+      "total_runtime_seconds": 169.01056385040283,
+      "memory_usage": {
+        "peak_memory_mb": 562.25,
+        "memory_delta_mb": 63.06,
+        "peak_traced_memory_mb": 106.69
+      },
+      "per_page_timings": [
+        {
+          "page": 1,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 1.5647754934098985,
+          "success": true
+        },
+        {
+          "page": 2,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 1.5647754934098985,
+          "success": true
+        },
+        {
+          "page": 3,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 1.5647754934098985,
+          "success": true
+        },
+        {
+          "page": 4,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 1.5647754934098985,
+          "success": true
+        },
+        {
+          "page": 5,
+          "file": "2024_meta_10-q.pdf",
+          "time_seconds": 1.5647754934098985,
+          "success": true
+        }
+      ],
+      "failures": [],
+      "docling_stats": {
+        "total_pages_in_document": 108,
+        "processing_time_per_page": 1.5647754934098985,
+        "document_type": "<class 'docling_core.types.doc.document.DoclingDocument'>",
+        "conversion_successful": true
+      },
+      "avg_time_per_page": 33.80211277008057
+    }
+  },
+  "failures": [
+    {
+      "file": "2024_meta_10-q.pdf",
+      "error": "too many values to unpack (expected 2)",
+      "timestamp": "2025-09-26T14:20:27.895318",
+      "type": "file_level"
+    }
+  ],
+  "summary": {
+    "total_runtime_seconds": 184.47,
+    "total_pages_processed": 10,
+    "total_failures": 1,
+    "corrected_performance_by_stage": {
+      "text_extraction": {
+        "pages_processed": 0,
+        "total_runtime_seconds": 0.01,
+        "avg_time_per_page_seconds": 0.012,
+        "throughput_pages_per_minute": 5189.5,
+        "memory_peak_mb": 70.19,
+        "success": false,
+        "failure_count": 1
+      },
+      "table_extraction": {
+        "pages_processed": 5,
+        "total_runtime_seconds": 9.92,
+        "avg_time_per_page_seconds": 1.983,
+        "throughput_pages_per_minute": 30.3,
+        "memory_peak_mb": 188.75,
+        "success": true,
+        "failure_count": 0
+      },
+      "docling": {
+        "pages_processed": 5,
+        "total_runtime_seconds": 169.01,
+        "avg_time_per_page_seconds": 33.802,
+        "throughput_pages_per_minute": 1.8,
+        "memory_peak_mb": 562.25,
+        "success": true,
+        "failure_count": 0
+      }
+    },
+    "real_bottlenecks": {
+      "slowest_stage": "docling",
+      "fastest_stage": "table_extraction",
+      "slowest_time_per_page": 33.802,
+      "fastest_time_per_page": 1.983,
+      "bottleneck_factor": 17.0
+    },
+    "validated_recommendations": [
+      "Successfully benchmarked stages: table_extraction, docling",
+      "Stages needing attention: text_extraction",
+      "Confirmed bottleneck: docling is 17.0x slower than table_extraction",
+      "docling is very slow (33.802s/page) - needs optimization"
+    ]
+  }
+}

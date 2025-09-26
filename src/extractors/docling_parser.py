@@ -9,7 +9,7 @@ class DoclingParser:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.converter = DocumentConverter()
-    
+
     def parse_pdf_comprehensive(self, pdf_path: str):
         """Parse PDF and export to both JSON and Markdown with detailed analysis"""
         pdf_path = Path(pdf_path)
@@ -335,7 +335,7 @@ class DoclingParser:
 
     def parse_pdf_to_terminal(self, pdf_path: str):
         pdf_path = Path(pdf_path)
-        
+
         print(f"\n🔄 Processing: {pdf_path.name}")
         if self.max_pages:
             print(f"📄 Limited to first {self.max_pages} pages")
@@ -345,7 +345,7 @@ class DoclingParser:
 
         # Export to dict
         doc_dict = result.document.export_to_dict()
-        
+
         # Debug: Check structure
         print(f"\n🔍 DEBUG: Document structure keys: {list(doc_dict.keys())}")
         
@@ -394,7 +394,7 @@ class DoclingParser:
 if __name__ == "__main__":
     # Initialize parser for analysis
     parser = DoclingParser()
-    
+
     # Analyze existing JSON files for critical features
     docling_dir = Path("data/parsed/docling")
     json_files = list(docling_dir.glob("*.json"))

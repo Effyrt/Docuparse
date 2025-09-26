@@ -1,0 +1,18 @@
+{
+  "text_avg_wer": 0.026,
+  "text_avg_cer": 0.0039,
+  "text_pass_rate": 1.0,
+  "table_avg_precision": 1.0,
+  "table_avg_recall": 1.0,
+  "table_avg_f1": 1.0,
+  "table_pass_rate": 1.0,
+  "overall_pass_rate": 1.0,
+  "total_evaluations": 4,
+  "thresholds": {
+    "wer_threshold": 0.05,
+    "cer_threshold": 0.02,
+    "precision_threshold": 0.9,
+    "recall_threshold": 0.85,
+    "f1_threshold": 0.87
+  }
+}
