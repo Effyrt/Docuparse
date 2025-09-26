@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 class MetadataBuilder:
-    def __init__(self, output_dir="data/metadata", company="Meta", fiscal_year=2023):
+    def __init__(self, output_dir="data/parsed/metadata", company="Meta", fiscal_year=2023):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.company = company
