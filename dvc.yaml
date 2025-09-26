@@ -33,6 +33,18 @@ stages:
       - layout_detection.target_pdf
       - layout_detection.enable_caption_extraction
 
+  extract_docling:
+    cmd: python src/extractors/docling_parser.py
+    deps:
+      - data/raw/10-K/
+      - data/raw/10-Q/
+      - src/extractors/docling_parser.py
+    outs:
+      - data/parsed/docling/
+    params:
+      - docling.max_pages
+      - docling.enable_analysis
+
 # Optional: Define parameters for experimentation
 params:
   - params.yaml
