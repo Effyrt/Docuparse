@@ -18,4 +18,10 @@
 - **Google Form Parser**: Provides the best structured tables (ideal for financial data), but has the highest cost.  
 
 👉 **Recommendation**:  
-Use **Docling as the default** pipeline. For **low-quality scans or table-heavy pages**, enable **Google Document AI - OCR** as a fallback.  
+Use **Docling as the default** pipeline. For **low-quality scans or table-heavy pages**, enable **Google Document AI - OCR** as a fallback. 
+
+## 🛠️ Implementation Note
+We implemented a combined script `docling_or_fallback_parser.py`.  
+- The parser first tries **Docling** (open-source pipeline).  
+- If Docling fails or produces no pages, it automatically falls back to **Google Document AI OCR** (`docai_parser.py`).  
+- Outputs are saved in `data/parsed/fallback_output/`.
