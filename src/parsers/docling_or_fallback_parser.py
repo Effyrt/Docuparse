@@ -9,7 +9,7 @@ class DoclingOrFallbackParser:
     If Docling fails or returns empty results, it falls back to Google Document AI OCR.
     """
     def __init__(self,
-                 output_dir: str = "data/parsed/docling",
+                 output_dir: str = "data/parsed/docling_or_fallback",
                  project_id: str = None,
                  location: str = "us",
                  processor_id: str = None):
@@ -62,12 +62,19 @@ class DoclingOrFallbackParser:
 
 
 if __name__ == "__main__":
-    pdf_file = "data/parsed_buy_tool/10-K_one_page_for_tool_parse.pdf"
-
     parser = DoclingOrFallbackParser(
-        project_id="meta-spirit-473302-c9",   # ⚠️ 可選，沒有憑證就不會用到
+        output_dir="data/parsed/docling_or_fallback",
+        project_id="meta-spirit-473302-c9",   # ⚠️ 可選
         location="us",
         processor_id="1c6b7902565b2358"
     )
 
-    parser.parse_pdf(pdf_file, page_num=75)
+    # 掃描 data/raw 下面的所有 PDF
+    raw_dir = Path("data/raw")
+    pdf_files = list(raw_dir.glob("*.pdf"))
+
+    for pdf_file in pdf_files:
+        print(f"🚀 Parsing {pdf_file} ...")
+        parser.parse_pdf(pdf_file)
+
+

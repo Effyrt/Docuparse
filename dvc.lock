@@ -31,3 +31,20 @@ stages:
       md5: 2646d7e3856a231664d47fd3bf438531.dir
       size: 140482
       nfiles: 1
+  docling_or_fallback:
+    cmd: python src/parsers/docling_or_fallback_parser.py
+    deps:
+    - path: data/raw/10-K.pdf
+      hash: md5
+      md5: 953f154adb87bfd1e3b5cde844d7f614
+      size: 2481466
+    - path: data/raw/10-Q.pdf
+      hash: md5
+      md5: 2a4c5dbaecce1ffa56d80a32341e911f
+      size: 1919100
+    outs:
+    - path: data/parsed/docling_or_fallback/
+      hash: md5
+      md5: 2646d7e3856a231664d47fd3bf438531.dir
+      size: 140482
+      nfiles: 1

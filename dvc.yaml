@@ -1,3 +1,4 @@
+      # dvc.yaml - Document Parser Pipeline Configuration
 stages:
   download:
     cmd: |
@@ -8,11 +9,76 @@ stages:
       - data/raw/10-K.pdf
       - data/raw/10-Q.pdf
 
-  docling:
-    cmd: python src/parsers/docling_or_fallback_parser.py
+  extract_text:
+    cmd: python src/extractors/text_extractor.py
     deps:
-      - data/raw/10-K.pdf
-      - data/raw/10-Q.pdf
+      - data/raw/10-K/
+      - data/raw/10-Q/
+      - src/extractors/text_extractor.py
+    outs:
+      - data/parsed/text/
+
+  extract_tables:
+    cmd: python src/extractors/table_extractor.py
+    deps:
+      - data/raw/10-K/
+      - data/raw/10-Q/
+      - src/extractors/table_extractor.py
+    outs:
+      - data/parsed/tables/
+
+  extract_layout_dual_model:
+    cmd: python src/extractors/layout_detector.py
+    deps:
+      - data/raw/10-K/
+      - data/raw/10-Q/
+      - src/extractors/layout_detector.py
+    outs:
+      - data/parsed/layout/detectron2/
+      - data/parsed/layout/layoutlmv3/
+      - data/parsed/layout/comparison/
+    params:
+      - layout_detection.pages_to_process
+      - layout_detection.target_pdf
+      - layout_detection.enable_caption_extraction
+
+  extract_docling:
+    cmd: python src/extractors/docling_parser.py
+    deps:
+      - data/raw/10-K/
+      - data/raw/10-Q/
+      - src/extractors/docling_parser.py
     outs:
       - data/parsed/docling/
+    params:
+      - docling.max_pages
+      - docling.enable_analysis
+
+  docling_or_fallback:
+    cmd: python src/parsers/docling_or_fallback_parser.py
+    deps:
+      - data/raw 
+    outs:
+      - data/parsed/docling_or_fallback/
+
+# Optional: Define parameters for experimentation
+params:
+  - params.yaml
+
+# Optional: Define plots for visualization
+plots:
+  - data/parsed/text/processing_log.json:
+      x: total_statistics.total_files
+      y: total_statistics.ocr_percentage
+  - data/parsed/tables/table_processing_log.json:
+      x: total_statistics.total_files
+      y: total_statistics.total_tables
+  - data/parsed/layout/comparison/10k_meta_2024_analysis.json:
+      x: overall_comparison.total_processing_time.detectron2
+      y: overall_comparison.total_blocks_detected.detectron2
+      title: "Detectron2 Performance: Processing Time vs Blocks Detected"
+  - data/parsed/layout/comparison/10k_meta_2024_analysis.json:
+      x: overall_comparison.total_processing_time.layoutlmv3
+      y: overall_comparison.caption_extraction.total_captions
+      title: "LayoutLMv3 Performance: Processing Time vs Captions Extracted"
 
