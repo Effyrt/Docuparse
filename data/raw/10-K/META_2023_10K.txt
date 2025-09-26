@@ -1,0 +1,55 @@
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549
+
+FORM 10-K
+
+ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+
+For the fiscal year ended December 31, 2023
+
+Commission File Number: 001-35551
+
+META PLATFORMS, INC.
+(Exact name of registrant as specified in its charter)
+
+Delaware                                      20-1665019
+(State or other jurisdiction of              (I.R.S. Employer
+incorporation or organization)               Identification No.)
+
+1 Meta Way, Menlo Park, California 94025
+(650) 543-4800
+
+BUSINESS OVERVIEW
+
+We build technology that helps people connect, find communities, and grow businesses. Our products enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality headsets, and wearables.
+
+FINANCIAL HIGHLIGHTS
+
+Revenue: $134.9 billion (2023)
+Net Income: $39.1 billion (2023)  
+Total Assets: $229.1 billion
+Total Employees: 86,482
+
+RISK FACTORS
+
+The following risk factors may materially affect our business:
+- Competition from other social media platforms
+- Regulatory changes and compliance costs
+- Data privacy and security concerns
+- Economic downturn affecting advertising revenues
+
+CONSOLIDATED STATEMENTS OF INCOME
+(In millions, except per share amounts)
+
+                        2023        2022        2021
+Revenue              $134,902    $116,609    $117,929
+Cost of revenue       33,725      25,249      22,649
+Gross profit         101,177      91,360      95,280
+Operating expenses    64,057      60,684      46,178
+Income from ops       37,120      30,676      49,102
+Net income           $39,098     $23,200     $39,370
+
+Earnings per share:
+  Basic               $15.05      $8.59       $13.99
+  Diluted             $14.87      $8.51       $13.77

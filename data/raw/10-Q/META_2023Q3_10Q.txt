@@ -1,0 +1,37 @@
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549
+
+FORM 10-Q
+
+QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+
+For the quarterly period ended September 30, 2023
+
+META PLATFORMS, INC.
+
+CONDENSED CONSOLIDATED STATEMENTS OF INCOME
+(In millions, except per share amounts)
+(Unaudited)
+
+Three Months Ended September 30, 2023
+
+Revenue                        $34,146
+Costs and expenses:
+  Cost of revenue              $6,212
+  Research and development     $7,950
+  Marketing and sales          $3,085
+  General and administrative   $2,433
+Total costs and expenses      $19,680
+
+Income from operations         $14,466
+Interest and other income      $546
+
+Income before provision        $15,012
+Provision for income taxes     $2,117
+
+Net income                     $12,895
+
+Earnings per share:
+  Basic                        $5.02
+  Diluted                      $4.98
