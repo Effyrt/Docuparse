@@ -1,0 +1,65 @@
+# Project LANTERN Pipeline Parameters
+
+# General settings
+general:
+  output_dir: "data/pipeline_output"
+  log_level: "INFO"
+  save_intermediate: true
+
+# Download settings
+download:
+  rate_limit: 10  # requests per second
+  cache_enabled: true
+  cache_dir: "data/cache"
+  timeout: 30  # seconds
+
+# Text extraction settings
+text_extraction:
+  ocr_threshold: 50  # characters
+  ocr_resolution: 300  # DPI
+  save_word_boxes: true
+  parallel_workers: 1
+
+# Parsing settings
+parsing:
+  use_fallback: true
+  fallback_timeout: 60  # seconds
+  save_visualizations: true
+
+# Layout detection settings
+layout_detection:
+  enabled: true
+  detectron2_confidence: 0.5
+  layoutlmv3_enabled: false  # Resource intensive
+  pages_to_process: "all"
+
+# Table extraction settings
+table_extraction:
+  flavor: "lattice"  # or "stream"
+  edge_tol: 50
+  row_tol: 2
+  column_tol: 0
+
+# XBRL validation settings
+validation:
+  enabled: true
+  tolerance_default: 0.01  # 1%
+  tolerance_strict: 0.001  # 0.1%
+  cache_xbrl: true
+
+# Database settings
+database:
+  enabled: true
+  type: "sqlite"
+  path: "data/parsed/metadata.db"
+  batch_size: 1000
+
+# Pipeline settings
+pipeline:
+  filing_types:
+    - "10-K"
+    - "10-Q"
+  filing_limit: 1
+  parallel_processing: false
+  retry_on_failure: true
+  max_retries: 3
