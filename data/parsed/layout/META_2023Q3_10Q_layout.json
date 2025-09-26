@@ -1,0 +1,326 @@
+{
+  "source_file": "data/raw/10-Q/META_2023Q3_10Q.txt",
+  "detection_date": "2025-09-25T14:34:14.825278",
+  "total_blocks": 26,
+  "block_types": {
+    "Title": 4,
+    "Table": 0,
+    "Paragraph": 0,
+    "List": 0,
+    "Text": 22
+  },
+  "layout_blocks": [
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        0,
+        500,
+        10
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "UNITED STATES"
+    },
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        10,
+        500,
+        20
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "SECURITIES AND EXCHANGE COMMISSION"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        20,
+        500,
+        30
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Washington, D.C. 20549"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        40,
+        500,
+        50
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "FORM 10-Q"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        60,
+        500,
+        70
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        80,
+        500,
+        90
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "For the quarterly period ended September 30, 2023"
+    },
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        100,
+        500,
+        110
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "META PLATFORMS, INC."
+    },
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        120,
+        500,
+        130
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "CONDENSED CONSOLIDATED STATEMENTS OF INCOME"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        130,
+        500,
+        140
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "(In millions, except per share amounts)"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        140,
+        500,
+        150
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "(Unaudited)"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        160,
+        500,
+        170
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Three Months Ended September 30, 2023"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        180,
+        500,
+        190
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Revenue                        $34,146"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        190,
+        500,
+        200
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Costs and expenses:"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        200,
+        500,
+        210
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "  Cost of revenue              $6,212"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        210,
+        500,
+        220
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "  Research and development     $7,950"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        220,
+        500,
+        230
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "  Marketing and sales          $3,085"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        230,
+        500,
+        240
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "  General and administrative   $2,433"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        240,
+        500,
+        250
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Total costs and expenses      $19,680"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        260,
+        500,
+        270
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Income from operations         $14,466"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        270,
+        500,
+        280
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Interest and other income      $546"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        290,
+        500,
+        300
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Income before provision        $15,012"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        300,
+        500,
+        310
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Provision for income taxes     $2,117"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        320,
+        500,
+        330
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Net income                     $12,895"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        340,
+        500,
+        350
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Earnings per share:"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        350,
+        500,
+        360
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "  Basic                        $5.02"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        360,
+        500,
+        370
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "  Diluted                      $4.98"
+    }
+  ]
+}

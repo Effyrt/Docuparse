@@ -1,0 +1,54 @@
+Block 1:
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549...
+
+Block 2:
+FORM 10-K
+ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934...
+
+Block 3:
+For the fiscal year ended December 31, 2023...
+
+Block 4:
+MICROSOFT CORP
+Ticker Symbol: MSFT...
+
+Block 5:
+PART I...
+
+Block 6:
+Item 1. Business
+MICROSOFT CORP is a leading company in its industry sector....
+
+Block 7:
+Item 7. Management's Discussion and Analysis...
+
+Block 8:
+FINANCIAL HIGHLIGHTS FOR 2023:
+Revenue: $211,915 million
+Operating Income: $52,978 million  
+Net Inc...
+
+Block 9:
+CONSOLIDATED STATEMENTS OF INCOME
+(In millions)...
+
+Block 10:
+Year Ended December 31, 2023...
+
+Block 11:
+Revenue                 $211,915
+Cost of Revenue         $127,149
+Gross Profit           $84,766
+Ope...
+
+Block 12:
+CONSOLIDATED BALANCE SHEET
+(In millions)...
+
+Block 13:
+Total Assets           $411,976
+Total Liabilities      $164,790
+Stockholders' Equity   $247,185...
+

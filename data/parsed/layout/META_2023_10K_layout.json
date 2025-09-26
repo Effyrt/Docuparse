@@ -1,0 +1,482 @@
+{
+  "source_file": "data/raw/10-K/META_2023_10K.txt",
+  "detection_date": "2025-09-25T14:34:14.826495",
+  "total_blocks": 39,
+  "block_types": {
+    "Title": 7,
+    "Table": 0,
+    "Paragraph": 1,
+    "List": 4,
+    "Text": 27
+  },
+  "layout_blocks": [
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        0,
+        500,
+        10
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "UNITED STATES"
+    },
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        10,
+        500,
+        20
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "SECURITIES AND EXCHANGE COMMISSION"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        20,
+        500,
+        30
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Washington, D.C. 20549"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        40,
+        500,
+        50
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "FORM 10-K"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        60,
+        500,
+        70
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        80,
+        500,
+        90
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "For the fiscal year ended December 31, 2023"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        100,
+        500,
+        110
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Commission File Number: 001-35551"
+    },
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        120,
+        500,
+        130
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "META PLATFORMS, INC."
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        130,
+        500,
+        140
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "(Exact name of registrant as specified in its charter)"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        150,
+        500,
+        160
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Delaware                                      20-1665019"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        160,
+        500,
+        170
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "(State or other jurisdiction of              (I.R.S. Employer"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        170,
+        500,
+        180
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "incorporation or organization)               Identification No.)"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        190,
+        500,
+        200
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "1 Meta Way, Menlo Park, California 94025"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        200,
+        500,
+        210
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "(650) 543-4800"
+    },
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        220,
+        500,
+        230
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "BUSINESS OVERVIEW"
+    },
+    {
+      "type": "Paragraph",
+      "bbox": [
+        0,
+        240,
+        500,
+        250
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "We build technology that helps people connect, find communities, and grow businesses. Our products e"
+    },
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        260,
+        500,
+        270
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "FINANCIAL HIGHLIGHTS"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        280,
+        500,
+        290
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Revenue: $134.9 billion (2023)"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        290,
+        500,
+        300
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Net Income: $39.1 billion (2023)  "
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        300,
+        500,
+        310
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Total Assets: $229.1 billion"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        310,
+        500,
+        320
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Total Employees: 86,482"
+    },
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        330,
+        500,
+        340
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "RISK FACTORS"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        350,
+        500,
+        360
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "The following risk factors may materially affect our business:"
+    },
+    {
+      "type": "List",
+      "bbox": [
+        0,
+        360,
+        500,
+        370
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "- Competition from other social media platforms"
+    },
+    {
+      "type": "List",
+      "bbox": [
+        0,
+        370,
+        500,
+        380
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "- Regulatory changes and compliance costs"
+    },
+    {
+      "type": "List",
+      "bbox": [
+        0,
+        380,
+        500,
+        390
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "- Data privacy and security concerns"
+    },
+    {
+      "type": "List",
+      "bbox": [
+        0,
+        390,
+        500,
+        400
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "- Economic downturn affecting advertising revenues"
+    },
+    {
+      "type": "Title",
+      "bbox": [
+        0,
+        410,
+        500,
+        420
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "CONSOLIDATED STATEMENTS OF INCOME"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        420,
+        500,
+        430
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "(In millions, except per share amounts)"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        440,
+        500,
+        450
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "                        2023        2022        2021"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        450,
+        500,
+        460
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Revenue              $134,902    $116,609    $117,929"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        460,
+        500,
+        470
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Cost of revenue       33,725      25,249      22,649"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        470,
+        500,
+        480
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Gross profit         101,177      91,360      95,280"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        480,
+        500,
+        490
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Operating expenses    64,057      60,684      46,178"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        490,
+        500,
+        500
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Income from ops       37,120      30,676      49,102"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        500,
+        500,
+        510
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Net income           $39,098     $23,200     $39,370"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        520,
+        500,
+        530
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "Earnings per share:"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        530,
+        500,
+        540
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "  Basic               $15.05      $8.59       $13.99"
+    },
+    {
+      "type": "Text",
+      "bbox": [
+        0,
+        540,
+        500,
+        550
+      ],
+      "confidence": 0.85,
+      "page": 1,
+      "content": "  Diluted             $14.87      $8.51       $13.77"
+    }
+  ]
+}

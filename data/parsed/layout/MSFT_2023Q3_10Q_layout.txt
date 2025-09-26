@@ -1,0 +1,40 @@
+Block 1:
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549...
+
+Block 2:
+FORM 10-Q
+QUARTERLY REPORT...
+
+Block 3:
+For the quarterly period ended September 30, 2023...
+
+Block 4:
+MICROSOFT CORP
+Ticker Symbol: MSFT...
+
+Block 5:
+PART I - FINANCIAL INFORMATION...
+
+Block 6:
+Item 1. Financial Statements...
+
+Block 7:
+CONDENSED CONSOLIDATED STATEMENTS OF INCOME
+(In millions)...
+
+Block 8:
+Three Months Ended September 30, 2023...
+
+Block 9:
+Revenue: $56,517 million
+Net Income: $18,299 million...
+
+Block 10:
+Nine Months Ended September 30, 2023...
+
+Block 11:
+Revenue: $169,551 million
+Net Income: $54,897 million...
+
