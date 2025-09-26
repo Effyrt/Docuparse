@@ -1,0 +1,12 @@
+Line,Type,Content,Values
+6,numeric,ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934,"13, 15, 1934"
+20,numeric,(650) 543-4800,"650, 543, 4800"
+44,numeric,2023        2022        2021,"2023, 2022, 2021"
+45,financial,"Revenue              $134,902    $116,609    $117,929","$134,902, $116,609, $117,929"
+46,numeric,"Cost of revenue       33,725      25,249      22,649","33,725, 25,249, 22,649"
+47,numeric,"Gross profit         101,177      91,360      95,280","101,177, 91,360, 95,280"
+48,numeric,"Operating expenses    64,057      60,684      46,178","64,057, 60,684, 46,178"
+49,numeric,"Income from ops       37,120      30,676      49,102","37,120, 30,676, 49,102"
+50,financial,"Net income           $39,098     $23,200     $39,370","$39,098, $23,200, $39,370"
+53,financial,Basic               $15.05      $8.59       $13.99,"$15.05, $8.59, $13.99"
+54,financial,Diluted             $14.87      $8.51       $13.77,"$14.87, $8.51, $13.77"

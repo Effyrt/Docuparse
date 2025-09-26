@@ -1,0 +1,12 @@
+Revenue: $347,000 million
+Operating Income: $86,750 million
+Net Income: $52,050 million
+Total Assets: $867,500 million
+Revenue                 $347,000
+Cost of Revenue         $208,200
+Gross Profit           $138,800
+Operating Income        $86,750
+Net Income             $52,050
+Total Assets           $867,500
+Total Liabilities      $347,000
+Stockholders' Equity   $520,500

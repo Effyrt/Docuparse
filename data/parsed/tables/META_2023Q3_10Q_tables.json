@@ -1,0 +1,17 @@
+{
+  "source_file": "data/raw/10-Q/META_2023Q3_10Q.txt",
+  "extraction_date": "2025-09-25T14:34:14.822363",
+  "table_count": 1,
+  "tables": [
+    {
+      "line_number": 6,
+      "content": "QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934",
+      "values": [
+        "13",
+        "15",
+        "1934"
+      ],
+      "type": "numeric"
+    }
+  ]
+}

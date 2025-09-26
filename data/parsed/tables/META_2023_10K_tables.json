@@ -1,0 +1,117 @@
+{
+  "source_file": "data/raw/10-K/META_2023_10K.txt",
+  "extraction_date": "2025-09-25T14:34:14.823954",
+  "table_count": 11,
+  "tables": [
+    {
+      "line_number": 6,
+      "content": "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934",
+      "values": [
+        "13",
+        "15",
+        "1934"
+      ],
+      "type": "numeric"
+    },
+    {
+      "line_number": 20,
+      "content": "(650) 543-4800",
+      "values": [
+        "650",
+        "543",
+        "4800"
+      ],
+      "type": "numeric"
+    },
+    {
+      "line_number": 44,
+      "content": "2023        2022        2021",
+      "values": [
+        "2023",
+        "2022",
+        "2021"
+      ],
+      "type": "numeric"
+    },
+    {
+      "line_number": 45,
+      "content": "Revenue              $134,902    $116,609    $117,929",
+      "values": [
+        "$134,902",
+        "$116,609",
+        "$117,929"
+      ],
+      "type": "financial"
+    },
+    {
+      "line_number": 46,
+      "content": "Cost of revenue       33,725      25,249      22,649",
+      "values": [
+        "33,725",
+        "25,249",
+        "22,649"
+      ],
+      "type": "numeric"
+    },
+    {
+      "line_number": 47,
+      "content": "Gross profit         101,177      91,360      95,280",
+      "values": [
+        "101,177",
+        "91,360",
+        "95,280"
+      ],
+      "type": "numeric"
+    },
+    {
+      "line_number": 48,
+      "content": "Operating expenses    64,057      60,684      46,178",
+      "values": [
+        "64,057",
+        "60,684",
+        "46,178"
+      ],
+      "type": "numeric"
+    },
+    {
+      "line_number": 49,
+      "content": "Income from ops       37,120      30,676      49,102",
+      "values": [
+        "37,120",
+        "30,676",
+        "49,102"
+      ],
+      "type": "numeric"
+    },
+    {
+      "line_number": 50,
+      "content": "Net income           $39,098     $23,200     $39,370",
+      "values": [
+        "$39,098",
+        "$23,200",
+        "$39,370"
+      ],
+      "type": "financial"
+    },
+    {
+      "line_number": 53,
+      "content": "Basic               $15.05      $8.59       $13.99",
+      "values": [
+        "$15.05",
+        "$8.59",
+        "$13.99"
+      ],
+      "type": "financial"
+    },
+    {
+      "line_number": 54,
+      "content": "Diluted             $14.87      $8.51       $13.77",
+      "values": [
+        "$14.87",
+        "$8.51",
+        "$13.77"
+      ],
+      "type": "financial"
+    }
+  ]
+}
