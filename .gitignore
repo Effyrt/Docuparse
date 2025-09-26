@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Analysis reports
+table_extraction_analysis.md
+
 # C extensions
 *.so
 
