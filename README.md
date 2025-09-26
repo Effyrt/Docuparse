@@ -6,7 +6,7 @@ WE ATTEST THAT WE HAVEN'T USED ANY OTHER STUDENTS' WORK IN OUR ASSIGNMENT AND AB
 **Contributions:**
 - Member 1 (Om Raut): 33.3%
 - Member 2 (Rayudu Hemanth): 33.3%
-- Member 3: 33.3%
+- Member 3: (PeiYing Chen): 33.3%
 
 ## Demo Video
 [10-minute demo video link]
