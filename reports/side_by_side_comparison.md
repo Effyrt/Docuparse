@@ -23,5 +23,5 @@ Use **Docling as the default** pipeline. For **low-quality scans or table-heavy 
 ## 🛠️ Implementation Note
 We implemented a combined script `docling_or_fallback_parser.py`.  
 - The parser first tries **Docling** (open-source pipeline).  
-- If Docling fails or produces no pages, it automatically falls back to **Google Document AI OCR** (`docai_parser.py`).  
+- If Docling fails or produces no pages, it automatically falls back to **Google Document AI OCR** (`src/parsers/docai_parser.py`).  
 - Outputs are saved in `data/parsed/fallback_output/`.
