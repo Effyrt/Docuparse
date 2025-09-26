@@ -1,5 +1,14 @@
-# dvc.yaml - Document Parser Pipeline Configuration
+      # dvc.yaml - Document Parser Pipeline Configuration
 stages:
+  download:
+    cmd: |
+      python -c "import os; os.makedirs('data/raw', exist_ok=True)"
+      curl -L -o data/raw/10-K.pdf "https://drive.google.com/uc?export=download&id=1g2BpxM1T4lvxNrH3MCSJM0DNKLMi-J6B"
+      curl -L -o data/raw/10-Q.pdf "https://drive.google.com/uc?export=download&id=1mGuAxXvKaXbi9_4XHxOmbRd8AlKM_rxA"
+    outs:
+      - data/raw/10-K.pdf
+      - data/raw/10-Q.pdf
+
   extract_text:
     cmd: python src/extractors/text_extractor.py
     deps:
@@ -45,6 +54,13 @@ stages:
       - docling.max_pages
       - docling.enable_analysis
 
+  docling_or_fallback:
+    cmd: python src/parsers/docling_or_fallback_parser.py
+    deps:
+      - data/raw 
+    outs:
+      - data/parsed/docling_or_fallback/
+
 # Optional: Define parameters for experimentation
 params:
   - params.yaml
@@ -65,3 +81,4 @@ plots:
       x: overall_comparison.total_processing_time.layoutlmv3
       y: overall_comparison.caption_extraction.total_captions
       title: "LayoutLMv3 Performance: Processing Time vs Captions Extracted"
+

@@ -9,6 +9,12 @@ table_extraction_analysis.md
 # C extensions
 *.so
 
+#
+.dvc/
+
+#Google cloud AI Key
+gcp-key.json
+
 # Distribution / packaging
 .Python
 build/
@@ -29,6 +35,9 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+# Ignore all raw PDF files
+data/raw/*.pdf
+
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
@@ -38,6 +47,7 @@ MANIFEST
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+
 
 # Unit test / coverage reports
 htmlcov/
