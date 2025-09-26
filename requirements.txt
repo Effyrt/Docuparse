@@ -1,0 +1,60 @@
+# Project LANTERN Requirements
+# Core PDF Processing
+pdfplumber==0.9.0
+PyPDF2==3.0.1
+
+# Table Extraction
+camelot-py[cv]==0.11.0
+tabulate==0.9.0
+
+# OCR Support
+pytesseract==0.3.10
+Pillow==10.0.1
+
+# Layout Detection (optional - heavy dependencies)
+# layoutparser==0.3.4
+# detectron2==0.6
+
+# Document Processing
+python-docx==0.8.11
+markdown==3.4.4
+
+# XBRL Processing
+python-xbrl==1.1.1
+# Alternative: arelle==2.2
+
+# SEC Data Download
+sec-edgar-downloader==5.0.2
+requests==2.31.0
+beautifulsoup4==4.12.2
+
+# Data Processing
+pandas==2.0.3
+numpy==1.24.3
+
+# Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# DVC Pipeline
+dvc==3.30.0
+dvc[s3]==3.30.0  # If using S3 storage
+
+# Testing & Quality
+pytest==7.4.3
+black==23.11.0
+flake8==6.1.0
+
+# Utilities
+python-dotenv==1.0.0
+tqdm==4.66.1
+colorama==0.4.6
+
+# Report Generation
+reportlab==4.0.7  # For PDF generation
+jinja2==3.1.2     # For template-based reports
+
+# Optional Cloud Services
+# boto3==1.28.85  # For AWS integration
+# google-cloud-documentai==2.20.1  # For Google Document AI
+# azure-ai-formrecognizer==3.3.2  # For Azure Form Recognizer
