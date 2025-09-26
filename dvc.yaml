@@ -1,0 +1,91 @@
+stages:
+  download:
+    cmd: python src/downloaders/sec_downloader.py ${ticker} ${filing_type}
+    params:
+      - download.rate_limit
+      - download.cache_enabled
+    deps:
+      - src/downloaders/sec_downloader.py
+    outs:
+      - data/raw/${filing_type}/
+
+  parse:
+    cmd: python src/parsers/docling_or_fallback_parser.py
+    params:
+      - parsing.use_fallback
+      - parsing.save_visualizations
+    deps:
+      - data/raw/
+      - src/parsers/
+    outs:
+      - data/parsed/docling/
+
+  extract_text:
+    cmd: python src/extractors/text_extractor.py
+    params:
+      - text_extraction.ocr_threshold
+      - text_extraction.ocr_resolution
+      - text_extraction.save_word_boxes
+    deps:
+      - data/raw/
+      - src/extractors/text_extractor.py
+    outs:
+      - data/parsed/text/
+
+  layout_detection:
+    cmd: python src/extractors/layout_detector.py
+    params:
+      - layout_detection.detectron2_confidence
+      - layout_detection.pages_to_process
+    deps:
+      - data/raw/
+      - src/extractors/layout_detector.py
+    outs:
+      - data/parsed/layout/
+
+  extract_tables:
+    cmd: python src/extractors/table_extractor.py
+    params:
+      - table_extraction.flavor
+      - table_extraction.edge_tol
+    deps:
+      - data/raw/
+      - src/extractors/table_extractor.py
+    outs:
+      - data/parsed/tables/
+
+  build_metadata:
+    cmd: python src/representations/metadata_builder.py
+    deps:
+      - data/parsed/docling/
+      - src/representations/metadata_builder.py
+    outs:
+      - data/metadata/
+
+  validate:
+    cmd: python src/validators/xbrl_validator.py ${ticker} ${filing_type} ${year}
+    params:
+      - validation.tolerance_default
+      - validation.tolerance_strict
+    deps:
+      - data/parsed/
+      - src/validators/xbrl_validator.py
+    outs:
+      - data/validation/
+
+  pipeline:
+    cmd: python run_pipeline.py ${ticker} --filing-type ${filing_type}
+    params:
+      - params.yaml:
+    deps:
+      - src/
+      - run_pipeline.py
+    outs:
+      - data/pipeline_output/
+    metrics:
+      - data/pipeline_output/metrics.json:
+          cache: false
+    plots:
+      - data/pipeline_output/validation_scores.json:
+          x: metric
+          y: score
