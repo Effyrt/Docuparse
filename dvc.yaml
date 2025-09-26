@@ -1,0 +1,18 @@
+stages:
+  download:
+    cmd: |
+      python -c "import os; os.makedirs('data/raw', exist_ok=True)"
+      curl -L -o data/raw/10-K.pdf "https://drive.google.com/uc?export=download&id=1g2BpxM1T4lvxNrH3MCSJM0DNKLMi-J6B"
+      curl -L -o data/raw/10-Q.pdf "https://drive.google.com/uc?export=download&id=1mGuAxXvKaXbi9_4XHxOmbRd8AlKM_rxA"
+    outs:
+      - data/raw/10-K.pdf
+      - data/raw/10-Q.pdf
+
+  docling:
+    cmd: python src/parsers/docling_or_fallback_parser.py
+    deps:
+      - data/raw/10-K.pdf
+      - data/raw/10-Q.pdf
+    outs:
+      - data/parsed/docling/
+
