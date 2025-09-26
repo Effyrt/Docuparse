@@ -1,0 +1,10 @@
+{
+  "source_file": "data/raw/10-Q/META_2023Q3_10Q.txt",
+  "extraction_date": "2025-09-25T14:34:14.820058",
+  "statistics": {
+    "total_lines": 38,
+    "total_words": 109,
+    "total_characters": 920
+  },
+  "ocr_used": false
+}

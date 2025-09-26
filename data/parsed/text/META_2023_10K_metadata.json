@@ -1,0 +1,10 @@
+{
+  "source_file": "data/raw/10-K/META_2023_10K.txt",
+  "extraction_date": "2025-09-25T14:34:14.820980",
+  "statistics": {
+    "total_lines": 56,
+    "total_words": 218,
+    "total_characters": 1804
+  },
+  "ocr_used": false
+}

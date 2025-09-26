@@ -1,0 +1,28 @@
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549
+FORM 10-K
+ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+For the fiscal year ended December 31, 2023
+Apple Inc.
+Ticker Symbol: AAPL
+PART I
+Item 1. Business
+Apple Inc. is a leading company in its industry sector.
+Item 7. Management's Discussion and Analysis
+FINANCIAL HIGHLIGHTS FOR 2023:
+Revenue: $383,285 million
+Operating Income: $95,821 million
+Net Income: $96,995 million
+Total Assets: $352,755 million
+CONSOLIDATED STATEMENTS OF INCOME
+(In millions)
+Year Ended December 31, 2023
+Revenue $383,285
+Cost of Revenue $229,971
+Gross Profit $153,314
+Operating Income $95,821
+Net Income $96,995
+CONSOLIDATED BALANCE SHEET
+(In millions)
+Total Assets $352,755
