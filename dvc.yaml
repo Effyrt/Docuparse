@@ -9,6 +9,13 @@ stages:
       - data/raw/10-K.pdf
       - data/raw/10-Q.pdf
 
+  download_tool_one_page:
+    cmd: |
+      python -c "import os; os.makedirs('data/raw', exist_ok=True)"
+      curl -L -o data/raw/10-K_one_page_for_tool_parse.pdf "https://drive.google.com/uc?export=download&id=16mC5mUl4hPo6YEXIcUHylqEVHSXjr06T"
+    outs:
+      - data/raw/10-K_one_page_for_tool_parse.pdf
+
   extract_text:
     cmd: python src/extractors/text_extractor.py
     deps:
