@@ -1,0 +1,83 @@
+# Document Analysis Report
+
+**Generated**: 2025-09-25 21:40:45
+
+## Summary
+
+- **Sections found**: 6
+- **Tables found**: 1
+- **Financial data points**: 12
+- **Layout blocks**: 7
+
+## Document Structure
+
+### Sections
+
+### UNITED STATES
+### SECURITIES AND EXCHANGE COMMISSION
+### AMAZON COM INC
+### FINANCIAL HIGHLIGHTS FOR 2023:
+### CONSOLIDATED STATEMENTS OF INCOME
+### CONSOLIDATED BALANCE SHEET
+
+### Key Financial Data
+
+- **$360,000 million**: Revenue: $360,000 million...
+- **$90,000 million**: Operating Income: $90,000 million...
+- **$54,000 million**: Net Income: $54,000 million...
+- **$900,000 million**: Total Assets: $900,000 million...
+- **$360,000**: Revenue                 $360,000...
+- **$216,000**: Cost of Revenue         $216,000...
+- **$144,000**: Gross Profit           $144,000...
+- **$90,000**: Operating Income        $90,000...
+- **$54,000**: Net Income             $54,000...
+- **$900,000**: Total Assets           $900,000...
+
+---
+
+## Original Content (Preview)
+
+```
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549
+
+FORM 10-K
+ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+
+For the fiscal year ended December 31, 2023
+
+AMAZON COM INC
+Ticker Symbol: AMZN
+
+PART I
+
+Item 1. Business
+AMAZON COM INC is a leading company in its industry sector.
+
+Item 7. Management's Discussion and Analysis
+
+FINANCIAL HIGHLIGHTS FOR 2023:
+Revenue: $360,000 million
+Operating Income: $90,000 million  
+Net Income: $54,000 million
+Total Assets: $900,000 million
+
+CONSOLIDATED STATEMENTS OF INCOME
+(In millions)
+
+Year Ended December 31, 2023
+
+Revenue                 $360,000
+Cost of Revenue         $216,000
+Gross Profit           $144,000
+Operating Income        $90,000
+Net Income             $54,000
+
+CONSOLIDATED BALANCE SHEET
+(In millions)
+
+Total Assets           $900,000
+Total Liabilities      $360,000
+Stockholders' Equity   $540,000
+```

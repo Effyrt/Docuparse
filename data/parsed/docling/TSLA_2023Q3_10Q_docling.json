@@ -1,0 +1,121 @@
+{
+  "document_id": "TSLA_2023Q3_10Q",
+  "source_file": "data/raw/TSLA_2023Q3_10Q.txt",
+  "parsed_date": "2025-09-25T21:40:45.723696",
+  "structure": {
+    "sections": [
+      {
+        "line_number": 0,
+        "title": "UNITED STATES",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 1,
+        "title": "SECURITIES AND EXCHANGE COMMISSION",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 5,
+        "title": "QUARTERLY REPORT",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 12,
+        "title": "PART I - FINANCIAL INFORMATION",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 16,
+        "title": "CONDENSED CONSOLIDATED STATEMENTS OF INCOME",
+        "type": "header",
+        "level": 1
+      }
+    ],
+    "tables": [],
+    "financial_data": [
+      {
+        "line_number": 21,
+        "amount": "$89,500 million",
+        "context": "Revenue: $89,500 million"
+      },
+      {
+        "line_number": 22,
+        "amount": "$13,425 million",
+        "context": "Net Income: $13,425 million"
+      },
+      {
+        "line_number": 26,
+        "amount": "$268,500 million",
+        "context": "Revenue: $268,500 million"
+      },
+      {
+        "line_number": 27,
+        "amount": "$40,275 million",
+        "context": "Net Income: $40,275 million"
+      }
+    ],
+    "layout_blocks": [
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          0,
+          100,
+          10
+        ],
+        "content": "UNITED STATES"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          10,
+          100,
+          20
+        ],
+        "content": "SECURITIES AND EXCHANGE COMMISSION"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          50,
+          100,
+          60
+        ],
+        "content": "QUARTERLY REPORT"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          120,
+          100,
+          130
+        ],
+        "content": "PART I - FINANCIAL INFORMATION"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          160,
+          100,
+          170
+        ],
+        "content": "CONDENSED CONSOLIDATED STATEMENTS OF INCOME"
+      }
+    ]
+  },
+  "metadata": {
+    "pages": 1,
+    "reading_order": "sequential",
+    "has_tables": false,
+    "has_formulas": false
+  },
+  "content": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\n\nFORM 10-Q\nQUARTERLY REPORT\n\nFor the quarterly period ended September 30, 2023\n\nTesla, Inc.\nTicker Symbol: TSLA\n\nPART I - FINANCIAL INFORMATION\n\nItem 1. Financial Statements\n\nCONDENSED CONSOLIDATED STATEMENTS OF INCOME\n(In millions)\n\nThree Months Ended September 30, 2023\n\nRevenue: $89,500 million\nNet Income: $13,425 million\n\nNine Months Ended September 30, 2023\n\nRevenue: $268,500 million\nNet Income: $40,275 million"
+}

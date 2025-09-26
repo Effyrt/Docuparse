@@ -1,0 +1,194 @@
+{
+  "document_id": "AMZN_2023_10K",
+  "source_file": "data/raw/AMZN_2023_10K.txt",
+  "parsed_date": "2025-09-25T21:40:45.726879",
+  "structure": {
+    "sections": [
+      {
+        "line_number": 0,
+        "title": "UNITED STATES",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 1,
+        "title": "SECURITIES AND EXCHANGE COMMISSION",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 9,
+        "title": "AMAZON COM INC",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 19,
+        "title": "FINANCIAL HIGHLIGHTS FOR 2023:",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 25,
+        "title": "CONSOLIDATED STATEMENTS OF INCOME",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 36,
+        "title": "CONSOLIDATED BALANCE SHEET",
+        "type": "header",
+        "level": 1
+      }
+    ],
+    "tables": [
+      {
+        "line_number": 5,
+        "content": "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934",
+        "type": "data_row",
+        "cell_count": 3
+      }
+    ],
+    "financial_data": [
+      {
+        "line_number": 20,
+        "amount": "$360,000 million",
+        "context": "Revenue: $360,000 million"
+      },
+      {
+        "line_number": 21,
+        "amount": "$90,000 million",
+        "context": "Operating Income: $90,000 million"
+      },
+      {
+        "line_number": 22,
+        "amount": "$54,000 million",
+        "context": "Net Income: $54,000 million"
+      },
+      {
+        "line_number": 23,
+        "amount": "$900,000 million",
+        "context": "Total Assets: $900,000 million"
+      },
+      {
+        "line_number": 30,
+        "amount": "$360,000",
+        "context": "Revenue                 $360,000"
+      },
+      {
+        "line_number": 31,
+        "amount": "$216,000",
+        "context": "Cost of Revenue         $216,000"
+      },
+      {
+        "line_number": 32,
+        "amount": "$144,000",
+        "context": "Gross Profit           $144,000"
+      },
+      {
+        "line_number": 33,
+        "amount": "$90,000",
+        "context": "Operating Income        $90,000"
+      },
+      {
+        "line_number": 34,
+        "amount": "$54,000",
+        "context": "Net Income             $54,000"
+      },
+      {
+        "line_number": 39,
+        "amount": "$900,000",
+        "context": "Total Assets           $900,000"
+      },
+      {
+        "line_number": 40,
+        "amount": "$360,000",
+        "context": "Total Liabilities      $360,000"
+      },
+      {
+        "line_number": 41,
+        "amount": "$540,000",
+        "context": "Stockholders' Equity   $540,000"
+      }
+    ],
+    "layout_blocks": [
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          0,
+          100,
+          10
+        ],
+        "content": "UNITED STATES"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          10,
+          100,
+          20
+        ],
+        "content": "SECURITIES AND EXCHANGE COMMISSION"
+      },
+      {
+        "type": "table",
+        "bbox": [
+          0,
+          50,
+          100,
+          60
+        ],
+        "content": "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          90,
+          100,
+          100
+        ],
+        "content": "AMAZON COM INC"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          190,
+          100,
+          200
+        ],
+        "content": "FINANCIAL HIGHLIGHTS FOR 2023:"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          250,
+          100,
+          260
+        ],
+        "content": "CONSOLIDATED STATEMENTS OF INCOME"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          360,
+          100,
+          370
+        ],
+        "content": "CONSOLIDATED BALANCE SHEET"
+      }
+    ]
+  },
+  "metadata": {
+    "pages": 1,
+    "reading_order": "sequential",
+    "has_tables": true,
+    "has_formulas": false
+  },
+  "content": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\n\nFORM 10-K\nANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\n\nFor the fiscal year ended December 31, 2023\n\nAMAZON COM INC\nTicker Symbol: AMZN\n\nPART I\n\nItem 1. Business\nAMAZON COM INC is a leading company in its industry sector.\n\nItem 7. Management's Discussion and Analysis\n\nFINANCIAL HIGHLIGHTS FOR 2023:\nRevenue: $360,000 million\nOperating Income: $90,000 million  \nNet Income: $54,000 million\nTotal Assets: $900,000 million\n\nCONSOLIDATED STATEMENTS OF INCOME\n(In millions)\n\nYear Ended December 31, 2023\n\nRevenue                 $360,000\nCost of Revenue         $216,000\nGross Profit           $144,000\nOperating Income        $90,000\nNet Income             $54,000\n\nCONSOLIDATED BALANCE SHEET\n(In millions)\n\nTotal Assets           $900,000\nTotal Liabilities      $360,000\nStockholders' Equity   $540,000"
+}

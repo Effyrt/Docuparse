@@ -1,0 +1,121 @@
+{
+  "document_id": "AAPL_2023Q3_10Q",
+  "source_file": "data/raw/AAPL_2023Q3_10Q.txt",
+  "parsed_date": "2025-09-25T23:02:55.439359",
+  "structure": {
+    "sections": [
+      {
+        "line_number": 0,
+        "title": "UNITED STATES",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 1,
+        "title": "SECURITIES AND EXCHANGE COMMISSION",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 5,
+        "title": "QUARTERLY REPORT",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 12,
+        "title": "PART I - FINANCIAL INFORMATION",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 16,
+        "title": "CONDENSED CONSOLIDATED STATEMENTS OF INCOME",
+        "type": "header",
+        "level": 1
+      }
+    ],
+    "tables": [],
+    "financial_data": [
+      {
+        "line_number": 21,
+        "amount": "$94,836 million",
+        "context": "Revenue: $94,836 million"
+      },
+      {
+        "line_number": 22,
+        "amount": "$22,956 million",
+        "context": "Net Income: $22,956 million"
+      },
+      {
+        "line_number": 26,
+        "amount": "$284,508 million",
+        "context": "Revenue: $284,508 million"
+      },
+      {
+        "line_number": 27,
+        "amount": "$68,868 million",
+        "context": "Net Income: $68,868 million"
+      }
+    ],
+    "layout_blocks": [
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          0,
+          100,
+          10
+        ],
+        "content": "UNITED STATES"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          10,
+          100,
+          20
+        ],
+        "content": "SECURITIES AND EXCHANGE COMMISSION"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          50,
+          100,
+          60
+        ],
+        "content": "QUARTERLY REPORT"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          120,
+          100,
+          130
+        ],
+        "content": "PART I - FINANCIAL INFORMATION"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          160,
+          100,
+          170
+        ],
+        "content": "CONDENSED CONSOLIDATED STATEMENTS OF INCOME"
+      }
+    ]
+  },
+  "metadata": {
+    "pages": 1,
+    "reading_order": "sequential",
+    "has_tables": false,
+    "has_formulas": false
+  },
+  "content": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\n\nFORM 10-Q\nQUARTERLY REPORT\n\nFor the quarterly period ended September 30, 2023\n\nApple Inc.\nTicker Symbol: AAPL\n\nPART I - FINANCIAL INFORMATION\n\nItem 1. Financial Statements\n\nCONDENSED CONSOLIDATED STATEMENTS OF INCOME\n(In millions)\n\nThree Months Ended September 30, 2023\n\nRevenue: $94,836 million\nNet Income: $22,956 million\n\nNine Months Ended September 30, 2023\n\nRevenue: $284,508 million\nNet Income: $68,868 million"
+}

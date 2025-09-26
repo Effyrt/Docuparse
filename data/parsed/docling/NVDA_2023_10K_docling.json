@@ -1,0 +1,194 @@
+{
+  "document_id": "NVDA_2023_10K",
+  "source_file": "data/raw/NVDA_2023_10K.txt",
+  "parsed_date": "2025-09-25T21:40:45.721443",
+  "structure": {
+    "sections": [
+      {
+        "line_number": 0,
+        "title": "UNITED STATES",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 1,
+        "title": "SECURITIES AND EXCHANGE COMMISSION",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 9,
+        "title": "NVIDIA CORP",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 19,
+        "title": "FINANCIAL HIGHLIGHTS FOR 2023:",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 25,
+        "title": "CONSOLIDATED STATEMENTS OF INCOME",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 36,
+        "title": "CONSOLIDATED BALANCE SHEET",
+        "type": "header",
+        "level": 1
+      }
+    ],
+    "tables": [
+      {
+        "line_number": 5,
+        "content": "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934",
+        "type": "data_row",
+        "cell_count": 3
+      }
+    ],
+    "financial_data": [
+      {
+        "line_number": 20,
+        "amount": "$347,000 million",
+        "context": "Revenue: $347,000 million"
+      },
+      {
+        "line_number": 21,
+        "amount": "$86,750 million",
+        "context": "Operating Income: $86,750 million"
+      },
+      {
+        "line_number": 22,
+        "amount": "$52,050 million",
+        "context": "Net Income: $52,050 million"
+      },
+      {
+        "line_number": 23,
+        "amount": "$867,500 million",
+        "context": "Total Assets: $867,500 million"
+      },
+      {
+        "line_number": 30,
+        "amount": "$347,000",
+        "context": "Revenue                 $347,000"
+      },
+      {
+        "line_number": 31,
+        "amount": "$208,200",
+        "context": "Cost of Revenue         $208,200"
+      },
+      {
+        "line_number": 32,
+        "amount": "$138,800",
+        "context": "Gross Profit           $138,800"
+      },
+      {
+        "line_number": 33,
+        "amount": "$86,750",
+        "context": "Operating Income        $86,750"
+      },
+      {
+        "line_number": 34,
+        "amount": "$52,050",
+        "context": "Net Income             $52,050"
+      },
+      {
+        "line_number": 39,
+        "amount": "$867,500",
+        "context": "Total Assets           $867,500"
+      },
+      {
+        "line_number": 40,
+        "amount": "$347,000",
+        "context": "Total Liabilities      $347,000"
+      },
+      {
+        "line_number": 41,
+        "amount": "$520,500",
+        "context": "Stockholders' Equity   $520,500"
+      }
+    ],
+    "layout_blocks": [
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          0,
+          100,
+          10
+        ],
+        "content": "UNITED STATES"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          10,
+          100,
+          20
+        ],
+        "content": "SECURITIES AND EXCHANGE COMMISSION"
+      },
+      {
+        "type": "table",
+        "bbox": [
+          0,
+          50,
+          100,
+          60
+        ],
+        "content": "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          90,
+          100,
+          100
+        ],
+        "content": "NVIDIA CORP"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          190,
+          100,
+          200
+        ],
+        "content": "FINANCIAL HIGHLIGHTS FOR 2023:"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          250,
+          100,
+          260
+        ],
+        "content": "CONSOLIDATED STATEMENTS OF INCOME"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          360,
+          100,
+          370
+        ],
+        "content": "CONSOLIDATED BALANCE SHEET"
+      }
+    ]
+  },
+  "metadata": {
+    "pages": 1,
+    "reading_order": "sequential",
+    "has_tables": true,
+    "has_formulas": false
+  },
+  "content": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\n\nFORM 10-K\nANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\n\nFor the fiscal year ended December 31, 2023\n\nNVIDIA CORP\nTicker Symbol: NVDA\n\nPART I\n\nItem 1. Business\nNVIDIA CORP is a leading company in its industry sector.\n\nItem 7. Management's Discussion and Analysis\n\nFINANCIAL HIGHLIGHTS FOR 2023:\nRevenue: $347,000 million\nOperating Income: $86,750 million  \nNet Income: $52,050 million\nTotal Assets: $867,500 million\n\nCONSOLIDATED STATEMENTS OF INCOME\n(In millions)\n\nYear Ended December 31, 2023\n\nRevenue                 $347,000\nCost of Revenue         $208,200\nGross Profit           $138,800\nOperating Income        $86,750\nNet Income             $52,050\n\nCONSOLIDATED BALANCE SHEET\n(In millions)\n\nTotal Assets           $867,500\nTotal Liabilities      $347,000\nStockholders' Equity   $520,500"
+}

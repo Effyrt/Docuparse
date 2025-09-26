@@ -1,0 +1,194 @@
+{
+  "document_id": "MSFT_2023_10K",
+  "source_file": "data/raw/MSFT_2023_10K.txt",
+  "parsed_date": "2025-09-25T21:40:45.722381",
+  "structure": {
+    "sections": [
+      {
+        "line_number": 0,
+        "title": "UNITED STATES",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 1,
+        "title": "SECURITIES AND EXCHANGE COMMISSION",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 9,
+        "title": "MICROSOFT CORP",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 19,
+        "title": "FINANCIAL HIGHLIGHTS FOR 2023:",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 25,
+        "title": "CONSOLIDATED STATEMENTS OF INCOME",
+        "type": "header",
+        "level": 1
+      },
+      {
+        "line_number": 36,
+        "title": "CONSOLIDATED BALANCE SHEET",
+        "type": "header",
+        "level": 1
+      }
+    ],
+    "tables": [
+      {
+        "line_number": 5,
+        "content": "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934",
+        "type": "data_row",
+        "cell_count": 3
+      }
+    ],
+    "financial_data": [
+      {
+        "line_number": 20,
+        "amount": "$211,915 million",
+        "context": "Revenue: $211,915 million"
+      },
+      {
+        "line_number": 21,
+        "amount": "$52,978 million",
+        "context": "Operating Income: $52,978 million"
+      },
+      {
+        "line_number": 22,
+        "amount": "$72,361 million",
+        "context": "Net Income: $72,361 million"
+      },
+      {
+        "line_number": 23,
+        "amount": "$411,976 million",
+        "context": "Total Assets: $411,976 million"
+      },
+      {
+        "line_number": 30,
+        "amount": "$211,915",
+        "context": "Revenue                 $211,915"
+      },
+      {
+        "line_number": 31,
+        "amount": "$127,149",
+        "context": "Cost of Revenue         $127,149"
+      },
+      {
+        "line_number": 32,
+        "amount": "$84,766",
+        "context": "Gross Profit           $84,766"
+      },
+      {
+        "line_number": 33,
+        "amount": "$52,978",
+        "context": "Operating Income        $52,978"
+      },
+      {
+        "line_number": 34,
+        "amount": "$72,361",
+        "context": "Net Income             $72,361"
+      },
+      {
+        "line_number": 39,
+        "amount": "$411,976",
+        "context": "Total Assets           $411,976"
+      },
+      {
+        "line_number": 40,
+        "amount": "$164,790",
+        "context": "Total Liabilities      $164,790"
+      },
+      {
+        "line_number": 41,
+        "amount": "$247,185",
+        "context": "Stockholders' Equity   $247,185"
+      }
+    ],
+    "layout_blocks": [
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          0,
+          100,
+          10
+        ],
+        "content": "UNITED STATES"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          10,
+          100,
+          20
+        ],
+        "content": "SECURITIES AND EXCHANGE COMMISSION"
+      },
+      {
+        "type": "table",
+        "bbox": [
+          0,
+          50,
+          100,
+          60
+        ],
+        "content": "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          90,
+          100,
+          100
+        ],
+        "content": "MICROSOFT CORP"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          190,
+          100,
+          200
+        ],
+        "content": "FINANCIAL HIGHLIGHTS FOR 2023:"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          250,
+          100,
+          260
+        ],
+        "content": "CONSOLIDATED STATEMENTS OF INCOME"
+      },
+      {
+        "type": "heading",
+        "bbox": [
+          0,
+          360,
+          100,
+          370
+        ],
+        "content": "CONSOLIDATED BALANCE SHEET"
+      }
+    ]
+  },
+  "metadata": {
+    "pages": 1,
+    "reading_order": "sequential",
+    "has_tables": true,
+    "has_formulas": false
+  },
+  "content": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\n\nFORM 10-K\nANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\n\nFor the fiscal year ended December 31, 2023\n\nMICROSOFT CORP\nTicker Symbol: MSFT\n\nPART I\n\nItem 1. Business\nMICROSOFT CORP is a leading company in its industry sector.\n\nItem 7. Management's Discussion and Analysis\n\nFINANCIAL HIGHLIGHTS FOR 2023:\nRevenue: $211,915 million\nOperating Income: $52,978 million  \nNet Income: $72,361 million\nTotal Assets: $411,976 million\n\nCONSOLIDATED STATEMENTS OF INCOME\n(In millions)\n\nYear Ended December 31, 2023\n\nRevenue                 $211,915\nCost of Revenue         $127,149\nGross Profit           $84,766\nOperating Income        $52,978\nNet Income             $72,361\n\nCONSOLIDATED BALANCE SHEET\n(In millions)\n\nTotal Assets           $411,976\nTotal Liabilities      $164,790\nStockholders' Equity   $247,185"
+}
