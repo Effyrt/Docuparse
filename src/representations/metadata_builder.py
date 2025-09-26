@@ -26,7 +26,7 @@ class MetadataBuilder:
 
         records = []
 
-        # 🔹 遍歷 texts
+        #  iterate texts
         for i, node in enumerate(doc.get("texts", [])):
             records.append(self._make_record(
                 doc_id, "text",
@@ -36,7 +36,7 @@ class MetadataBuilder:
                 f"#/texts/{i}"
             ))
 
-        # 🔹 遍歷 tables
+        #  iterate tables
         for i, node in enumerate(doc.get("tables", [])):
             records.append(self._make_record(
                 doc_id, "table",
@@ -46,7 +46,7 @@ class MetadataBuilder:
                 f"#/tables/{i}"
             ))
 
-        # 🔹 遍歷 pictures
+        #  iterate pictures
         for i, node in enumerate(doc.get("pictures", [])):
             records.append(self._make_record(
                 doc_id, "picture",
@@ -56,14 +56,14 @@ class MetadataBuilder:
                 f"#/pictures/{i}"
             ))
 
-        # ✅ 存成 JSONL
+        # ✅ save JSONL
         out_jsonl = self.output_dir / f"{doc_id}_metadata.jsonl"
         with open(out_jsonl, "w", encoding="utf-8") as f:
             for r in records:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
         print(f"[MetadataBuilder] Saved metadata to {out_jsonl} ({len(records)} records)")
 
-        # ✅ 存成 Markdown summary
+        # ✅ save Markdown summary
         out_md = self.output_dir / f"{doc_id}_provenance.md"
         with open(out_md, "w", encoding="utf-8") as f:
             f.write(f"# Provenance Summary for {doc_id}\n\n")

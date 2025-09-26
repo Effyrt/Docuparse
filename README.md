@@ -1,3 +1,6 @@
+
+
+
 # Docuparse
 Intelligent document parser with adaptive extraction, layout detection, and automated validation for financial filings.
 
@@ -33,7 +36,7 @@ Users or evaluators choose a financial report (10-K / 10-Q filing).
 
 Extracted text and tables (via pdfplumber, Camelot, OCR (Tesseract), LayoutParser, Docling, or Document AI) from the reports.
 
-🔍 Fallback 機制
+### 🔍 Fallback strategy
 
 🔄 Correct-after-steps: values mismatched but corrected after refinement.
 
@@ -51,7 +54,7 @@ dvc repro
 
 ```
 ### Project Structure
-
+```
 Docuparse/
 ├── data/
 │   ├── raw/             # Raw SEC filings 
@@ -71,5 +74,6 @@ Docuparse/
 └── README.md            # Project documentation
  
 ```
+
 
 
