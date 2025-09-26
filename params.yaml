@@ -1,5 +1,12 @@
 # Docuparse Pipeline Parameters
 
+# Download Configuration
+download:
+  companies: ["META"]  # List of companies to download filings for
+  fiscal_years: [2024]  # List of fiscal years
+  filing_types: ["10-K", "10-Q"]  # Types of filings to download
+  output_dir: "data/raw"  # Output directory for downloaded files
+
 # Layout Detection Configuration
 layout_detection:
   pages_to_process: "all"  # Options: "all", "first_5", or specific number
@@ -28,6 +35,12 @@ docling:
   enable_analysis: true
   output_formats: ["json", "markdown"]
   save_visualizations: false
+
+# Export Configuration
+export:
+  formats: ["json", "markdown", "csv"]  # Export formats to generate
+  include_summary: true  # Include pipeline summary report
+  output_dir: "data/exports"  # Output directory for final exports
 
 # General Configuration
 general:
