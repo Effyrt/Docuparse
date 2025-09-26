@@ -1,0 +1,35 @@
+{
+  "source_file": "data/raw/META_2023_10K.txt",
+  "validation_date": "2025-09-25T21:40:45.729342",
+  "xbrl_standard": "US-GAAP-2023",
+  "total_fields_validated": 3,
+  "matches": 3,
+  "mismatches": 0,
+  "overall_accuracy": 1.0,
+  "validation_details": [
+    {
+      "xbrl_tag": "Revenue",
+      "xbrl_value": 134902000000,
+      "extracted_value": 134902000000.0,
+      "difference": 0.0,
+      "accuracy": 1.0,
+      "status": "MATCH"
+    },
+    {
+      "xbrl_tag": "NetIncome",
+      "xbrl_value": 39098000000,
+      "extracted_value": 39098000000.0,
+      "difference": 0.0,
+      "accuracy": 1.0,
+      "status": "MATCH"
+    },
+    {
+      "xbrl_tag": "TotalAssets",
+      "xbrl_value": 229100000000,
+      "extracted_value": 229100000000.0,
+      "difference": 0.0,
+      "accuracy": 1.0,
+      "status": "MATCH"
+    }
+  ]
+}

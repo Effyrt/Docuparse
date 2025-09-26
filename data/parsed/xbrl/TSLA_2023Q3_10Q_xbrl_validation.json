@@ -1,0 +1,27 @@
+{
+  "source_file": "data/raw/TSLA_2023Q3_10Q.txt",
+  "validation_date": "2025-09-25T21:40:45.728948",
+  "xbrl_standard": "US-GAAP-2023",
+  "total_fields_validated": 2,
+  "matches": 0,
+  "mismatches": 2,
+  "overall_accuracy": 0.503,
+  "validation_details": [
+    {
+      "xbrl_tag": "Revenue",
+      "xbrl_value": 134902000000,
+      "extracted_value": 89500000000.0,
+      "difference": 45402000000.0,
+      "accuracy": 0.663,
+      "status": "MISMATCH"
+    },
+    {
+      "xbrl_tag": "NetIncome",
+      "xbrl_value": 39098000000,
+      "extracted_value": 13425000000.0,
+      "difference": 25673000000.0,
+      "accuracy": 0.343,
+      "status": "MISMATCH"
+    }
+  ]
+}

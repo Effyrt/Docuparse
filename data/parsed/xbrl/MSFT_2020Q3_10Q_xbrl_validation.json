@@ -1,0 +1,27 @@
+{
+  "source_file": "data/raw/MSFT_2020Q3_10Q.txt",
+  "validation_date": "2025-09-25T23:08:43.060037",
+  "xbrl_standard": "US-GAAP-2023",
+  "total_fields_validated": 2,
+  "matches": 0,
+  "mismatches": 2,
+  "overall_accuracy": 0.4435,
+  "validation_details": [
+    {
+      "xbrl_tag": "Revenue",
+      "xbrl_value": 134902000000,
+      "extracted_value": 56517000000.0,
+      "difference": 78385000000.0,
+      "accuracy": 0.419,
+      "status": "MISMATCH"
+    },
+    {
+      "xbrl_tag": "NetIncome",
+      "xbrl_value": 39098000000,
+      "extracted_value": 18299000000.0,
+      "difference": 20799000000.0,
+      "accuracy": 0.468,
+      "status": "MISMATCH"
+    }
+  ]
+}

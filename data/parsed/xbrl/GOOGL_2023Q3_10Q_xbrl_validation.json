@@ -1,0 +1,27 @@
+{
+  "source_file": "data/raw/GOOGL_2023Q3_10Q.txt",
+  "validation_date": "2025-09-25T21:40:45.728677",
+  "xbrl_standard": "US-GAAP-2023",
+  "total_fields_validated": 2,
+  "matches": 0,
+  "mismatches": 2,
+  "overall_accuracy": 0.5115000000000001,
+  "validation_details": [
+    {
+      "xbrl_tag": "Revenue",
+      "xbrl_value": 134902000000,
+      "extracted_value": 74598000000.0,
+      "difference": 60304000000.0,
+      "accuracy": 0.553,
+      "status": "MISMATCH"
+    },
+    {
+      "xbrl_tag": "NetIncome",
+      "xbrl_value": 39098000000,
+      "extracted_value": 18368000000.0,
+      "difference": 20730000000.0,
+      "accuracy": 0.47,
+      "status": "MISMATCH"
+    }
+  ]
+}

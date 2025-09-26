@@ -1,0 +1,27 @@
+{
+  "source_file": "data/raw/NVDA_2023Q3_10Q.txt",
+  "validation_date": "2025-09-25T21:40:45.729702",
+  "xbrl_standard": "US-GAAP-2023",
+  "total_fields_validated": 2,
+  "matches": 0,
+  "mismatches": 2,
+  "overall_accuracy": 0.488,
+  "validation_details": [
+    {
+      "xbrl_tag": "Revenue",
+      "xbrl_value": 134902000000,
+      "extracted_value": 86750000000.0,
+      "difference": 48152000000.0,
+      "accuracy": 0.643,
+      "status": "MISMATCH"
+    },
+    {
+      "xbrl_tag": "NetIncome",
+      "xbrl_value": 39098000000,
+      "extracted_value": 13012000000.0,
+      "difference": 26086000000.0,
+      "accuracy": 0.333,
+      "status": "MISMATCH"
+    }
+  ]
+}
