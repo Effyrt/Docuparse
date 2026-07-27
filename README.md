@@ -1,6 +1,10 @@
 # DocuParse
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://docuparse.streamlit.app)
+
 **Intelligent document parser for financial filings** - Extracts text, tables, and validates data from SEC 10-K/10-Q documents using multiple AI models and cross-verification.
+
+🔗 **Live results dashboard:** [docuparse.streamlit.app](https://docuparse.streamlit.app)
 
 ## What This Does
 
@@ -39,6 +43,10 @@ ls data/exports/
 ```
 
 ## 📊 Results Dashboard
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://docuparse.streamlit.app)
+
+**Live app:** [docuparse.streamlit.app](https://docuparse.streamlit.app)
 
 An interactive Streamlit dashboard visualizes the pipeline's recorded outputs —
 evaluation metrics, per-stage benchmarks (runtime & memory), build-vs-buy cost
