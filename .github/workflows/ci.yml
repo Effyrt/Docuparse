@@ -1,0 +1,31 @@
+name: CI
+
+# Fast, dependency-light checks that run on every PR and push. This is the
+# required gate. The full pipeline smoke test lives in smoke-test.yml and is
+# run manually because it needs the heavy extraction stack and network access.
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dev dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Run unit tests
+        run: python -m pytest

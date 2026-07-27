@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 import logging
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 import numpy as np
 from dataclasses import dataclass, asdict
 
@@ -238,7 +238,7 @@ class TextExtractor:
             'word_count': page_result.word_count,
             'char_count': page_result.char_count,
             'extraction_time': page_result.extraction_time,
-            'timestamp': datetime.utcnow().isoformat(),
+            'timestamp': datetime.now(timezone.utc).isoformat(),
             'error': page_result.error
         }
         
@@ -260,7 +260,7 @@ class TextExtractor:
         
         log_data = {
             'doc_id': doc_id,
-            'timestamp': datetime.utcnow().isoformat(),
+            'timestamp': datetime.now(timezone.utc).isoformat(),
             'total_pages': len(results),
             'ocr_pages': [r.page_num for r in results if r.ocr_used],
             'failed_pages': [r.page_num for r in results if r.error],
@@ -437,7 +437,7 @@ def process_multiple_pdfs(
                     'quarter': quarter,
                     'company': 'META',
                     'source_file': pdf_file.name,
-                    'processed_at': datetime.utcnow().isoformat()
+                    'processed_at': datetime.now(timezone.utc).isoformat()
                 },
                 'extraction_stats': results['statistics'],
                 'file_paths': {
@@ -547,7 +547,7 @@ def process_multiple_pdfs(
             serializable_results[key] = result
     
     processing_log = {
-        'timestamp': datetime.utcnow().isoformat(),
+        'timestamp': datetime.now(timezone.utc).isoformat(),
         'total_statistics': total_stats,
         'file_results': serializable_results,
         'output_directory': str(output_dir)

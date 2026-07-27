@@ -8,7 +8,8 @@ stages:
       - download.filing_types
       - download.output_dir
     outs:
-      - data/raw/META/
+      - data/raw/10-K/
+      - data/raw/10-Q/
 
   extract_text:
     cmd: python src/extractors/text_extractor.py
