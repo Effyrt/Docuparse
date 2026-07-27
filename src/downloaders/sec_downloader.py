@@ -5,6 +5,7 @@ Downloads 10-K or 10-Q filings based on company and fiscal year parameters.
 """
 
 import os
+import re
 import sys
 import yaml
 import requests
@@ -59,33 +60,89 @@ class SECDownloader:
             logger.error(f"Error parsing {params_file}: {e}")
             return {}
 
+    @staticmethod
+    def _extract_gdrive_confirm_token(response: "requests.Response") -> Optional[str]:
+        """Return Google Drive's download-confirmation token, if the response is an interstitial page.
+
+        Large Google Drive files can't be virus-scanned, so the first request returns an
+        HTML page instead of the file. We must resend the request with the confirm token to
+        get the real bytes. Without this the downloader silently saves the HTML page as a PDF.
+        """
+        # Older style: token is set as a cookie named ``download_warning*``.
+        for key, value in response.cookies.items():
+            if key.startswith("download_warning"):
+                return value
+
+        # Newer style: token is embedded in the HTML form of the interstitial page.
+        content_type = response.headers.get("Content-Type", "")
+        if "text/html" in content_type:
+            match = re.search(r'name="confirm"\s+value="([^"]+)"', response.text)
+            if match:
+                return match.group(1)
+            match = re.search(r'confirm=([0-9A-Za-z_\-]+)', response.text)
+            if match:
+                return match.group(1)
+        return None
+
     def download_file(self, url: str, output_path: Path, filename: str) -> bool:
-        """Download a file from URL to the specified path."""
+        """Download a file from URL and verify it is a real PDF before keeping it."""
+        file_path = output_path / filename
         try:
             logger.info(f"Downloading {filename} from {url}")
-            
+
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
             }
-            
-            response = requests.get(url, headers=headers, stream=True, timeout=30)
+
+            session = requests.Session()
+            response = session.get(url, headers=headers, stream=True, timeout=30)
             response.raise_for_status()
-            
-            file_path = output_path / filename
+
+            # Handle Google Drive's large-file confirmation interstitial.
+            if "drive.google.com" in url or "drive.usercontent.google.com" in url:
+                token = self._extract_gdrive_confirm_token(response)
+                if token:
+                    logger.info("Google Drive confirmation required, retrying with token")
+                    response = session.get(
+                        url, headers=headers, params={'confirm': token},
+                        stream=True, timeout=30
+                    )
+                    response.raise_for_status()
+
             with open(file_path, 'wb') as f:
                 for chunk in response.iter_content(chunk_size=8192):
                     if chunk:
                         f.write(chunk)
-            
+
+            # Guard against silently saving an HTML error/interstitial page as a ".pdf".
+            if not self._is_pdf(file_path):
+                logger.error(
+                    f"Downloaded {filename} is not a valid PDF (likely an HTML error page). "
+                    "Discarding the file."
+                )
+                file_path.unlink(missing_ok=True)
+                return False
+
             file_size = file_path.stat().st_size
             logger.info(f"Successfully downloaded {filename} ({file_size:,} bytes)")
             return True
-            
+
         except requests.RequestException as e:
             logger.error(f"Failed to download {filename}: {e}")
+            file_path.unlink(missing_ok=True)
             return False
         except Exception as e:
             logger.error(f"Unexpected error downloading {filename}: {e}")
+            file_path.unlink(missing_ok=True)
+            return False
+
+    @staticmethod
+    def _is_pdf(file_path: Path) -> bool:
+        """Return True if the file starts with the PDF magic bytes (``%PDF``)."""
+        try:
+            with open(file_path, 'rb') as f:
+                return f.read(5).startswith(b'%PDF')
+        except OSError:
             return False
 
     def get_filing_url(self, company: str, fiscal_year: int, filing_type: str) -> Optional[str]:
@@ -104,32 +161,36 @@ class SECDownloader:
     def download_filings(self, companies: list, fiscal_years: list, filing_types: list) -> Dict[str, bool]:
         """Download specified filings for given companies and years."""
         results = {}
-        
+
         for company in companies:
-            company_dir = self.output_dir / company.upper()
-            company_dir.mkdir(exist_ok=True)
-            
             for year in fiscal_years:
                 for filing_type in filing_types:
+                    # Organize downloads by filing type (e.g. data/raw/10-K/) so the
+                    # downstream extractors, which read from data/raw/<FILING_TYPE>/,
+                    # find their inputs. This also keeps dvc.yaml's `outs` consistent
+                    # with what is actually produced.
+                    filing_dir = self.output_dir / filing_type.upper()
+                    filing_dir.mkdir(parents=True, exist_ok=True)
+
                     # Generate filename
                     filename = f"{year}_{company.lower()}_{filing_type.lower()}.pdf"
-                    
+
                     # Check if file already exists
-                    file_path = company_dir / filename
+                    file_path = filing_dir / filename
                     if file_path.exists():
                         logger.info(f"File already exists: {file_path}")
                         results[f"{company}_{year}_{filing_type}"] = True
                         continue
-                    
+
                     # Get download URL
                     url = self.get_filing_url(company, year, filing_type)
                     if not url:
                         logger.error(f"No URL found for {company} {year} {filing_type}")
                         results[f"{company}_{year}_{filing_type}"] = False
                         continue
-                    
+
                     # Download the file
-                    success = self.download_file(url, company_dir, filename)
+                    success = self.download_file(url, filing_dir, filename)
                     results[f"{company}_{year}_{filing_type}"] = success
                     
                     # Small delay to be respectful to servers

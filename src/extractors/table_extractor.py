@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import List, Dict, Optional, Tuple, Any
 import logging
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from dataclasses import dataclass, asdict
 import time
 
@@ -759,7 +759,7 @@ class TableExtractor:
                 'rows': table.rows,
                 'cols': table.cols,
                 'extraction_time': table.extraction_time,
-                'timestamp': datetime.utcnow().isoformat(),
+                'timestamp': datetime.now(timezone.utc).isoformat(),
                 'error': table.error,
                 'file_path': str(table_path)
             }
@@ -814,7 +814,7 @@ class TableExtractor:
         
         log_data = {
             'doc_id': doc_id,
-            'timestamp': datetime.utcnow().isoformat(),
+            'timestamp': datetime.now(timezone.utc).isoformat(),
             'total_pages': len(results),
             'total_tables': sum(r.total_tables for r in results),
             'statistics': {
@@ -1006,7 +1006,7 @@ def process_multiple_pdfs_for_tables(
                     'quarter': quarter,
                     'company': company,
                     'source_file': pdf_file.name,
-                    'processed_at': datetime.utcnow().isoformat()
+                    'processed_at': datetime.now(timezone.utc).isoformat()
                 },
                 'extraction_stats': results['statistics'],
                 'file_paths': {
@@ -1108,7 +1108,7 @@ def process_multiple_pdfs_for_tables(
     if not target_pdf.exists():
         logger.warning(f"Target PDF not found: {target_pdf}")
         return {
-            'timestamp': datetime.utcnow().isoformat(),
+            'timestamp': datetime.now(timezone.utc).isoformat(),
             'total_statistics': total_stats,
             'file_results': all_results,
             'output_directory': str(output_dir)
@@ -1143,7 +1143,7 @@ def process_multiple_pdfs_for_tables(
     
     # Save comprehensive processing log
     processing_log = {
-        'timestamp': datetime.utcnow().isoformat(),
+        'timestamp': datetime.now(timezone.utc).isoformat(),
         'total_statistics': total_stats,
         'file_results': all_results,
         'output_directory': str(output_dir)

@@ -1,28 +1,29 @@
-name: Smoke Test   # Name of the workflow, shown in GitHub Actions tab
+name: Smoke Test (full pipeline)
 
+# The full DVC pipeline smoke test. It downloads filings and runs the heavy
+# extraction stack (torch, docling, layout models), so it is NOT part of the
+# required per-PR gate — it is slow and depends on external downloads. Trigger
+# it manually from the Actions tab when you want an end-to-end run.
 on:
-  pull_request:    # Trigger workflow when a pull request is created/updated
-    branches:
-      - develop    # Run workflow only if PR targets the 'develop' branch
-      - main       # Or if PR targets the 'main' branch
+  workflow_dispatch:
 
 jobs:
-  smoke-test:      
-    runs-on: ubuntu-latest   # Run the job on the latest Ubuntu runner provided by GitHub
+  smoke-test:
+    runs-on: ubuntu-latest
 
-    steps:        
-      - name: Checkout repository   # Fetch the repository code
-        uses: actions/checkout@v4   # Use the official GitHub Action to check out code
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Python        
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'    
+          python-version: '3.11'
 
-      - name: Install dependencies  # Install project dependencies
+      - name: Install dependencies
         run: |
-          pip install -r requirements.txt   # Install packages listed in requirements.txt
-          pip install dvc[s3]              # Install DVC with S3 support (change to dvc[gdrive] or dvc[azure] if needed)
+          pip install -r requirements.txt
+          pip install dvc                 # No remote is configured; plain DVC is enough for `dvc repro`.
 
-      - name: Run smoke test        # Execute smoke test script
-        run: bash tests/smoke.sh    # Run the smoke.sh 
+      - name: Run smoke test
+        run: bash tests/smoke.sh

@@ -1,0 +1,6 @@
+# Lightweight dependencies for the fast unit-test suite (tests/unit).
+# These deliberately exclude the heavy extraction stack (torch, docling,
+# detectron2, pdfplumber) so the suite runs quickly and deterministically in CI.
+pytest>=8.0.0
+requests>=2.31.0
+PyYAML>=6.0

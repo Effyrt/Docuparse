@@ -40,8 +40,9 @@ def convert_metadata(input_file: Path, output_dir: Path):
 
 
 if __name__ == "__main__":
-    input_dir = Path(r"C:\Users\Pauline\Desktop\PEI\NEU_assignments\DAMG 7245_(2025 Fall)\data\parsed\metadata")
-    output_dir = Path(r"C:\Users\Pauline\Desktop\PEI\NEU_assignments\DAMG 7245_(2025 Fall)\data\parsed\metadata_representations")
+    # Paths are relative to the repo root so this runs on any machine.
+    input_dir = Path("data/parsed/metadata")
+    output_dir = Path("data/parsed/metadata_representations")
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # find all JSONL files

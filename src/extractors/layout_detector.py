@@ -638,8 +638,8 @@ class DualLayoutDetector:
     def process_single_10k_pdf(self, max_pages: int = None) -> Dict:
         """Process single 10-K PDF for focused analysis"""
         
-        # Target specific 10-K file
-        raw_dir = Path("/Users/HemanthRayudu/Profession/Assignments/DAMG/Docuparse/data/raw")
+        # Target specific 10-K file (relative to the repo root)
+        raw_dir = Path("data/raw")
         target_pdf = raw_dir / "10-K" / "2024_meta_10-k.pdf"
         
         if not target_pdf.exists():
@@ -794,7 +794,7 @@ class DualLayoutDetector:
 
 def estimate_processing_time():
     """Estimate processing time by testing one PDF"""
-    raw_dir = Path("/Users/HemanthRayudu/Profession/Assignments/DAMG/Docuparse/data/raw")
+    raw_dir = Path("data/raw")
     pdf_files = list(raw_dir.rglob("*.pdf"))
     
     if not pdf_files:
