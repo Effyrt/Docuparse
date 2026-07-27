@@ -15,14 +15,21 @@ on:
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.13 is the version the dashboard is deployed on (Streamlit Community
+        # Cloud); 3.11 is kept as a lower bound. Testing both keeps the deployed
+        # interpreter covered by CI.
+        python-version: ['3.11', '3.13']
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python-version }}
 
       - name: Install dev dependencies
         run: pip install -r requirements-dev.txt

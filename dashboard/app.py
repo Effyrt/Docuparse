@@ -6,7 +6,7 @@ reports. It does NOT run the extraction pipeline (that needs the heavy stack and
 minutes per document); it reads the JSON/markdown the pipeline already produced.
 
 Run locally:
-    pip install -r requirements-dashboard.txt
+    pip install -r dashboard/requirements.txt
     streamlit run dashboard/app.py
 
 All data access lives in dashboard/data_loader.py (pure stdlib, unit-tested).
