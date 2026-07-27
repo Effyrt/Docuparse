@@ -1,0 +1,19 @@
+# Streamlit configuration.
+#
+# This must live at the repository root: when the app entrypoint is in a
+# subdirectory (dashboard/app.py), Streamlit Community Cloud only reads the
+# config file from the repo root.
+
+[theme]
+base = "light"
+primaryColor = "#4C6EF5"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F1F3F9"
+textColor = "#1A1C23"
+font = "sans serif"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
