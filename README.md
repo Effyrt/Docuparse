@@ -38,6 +38,33 @@ dvc repro
 ls data/exports/
 ```
 
+## 📊 Results Dashboard
+
+An interactive Streamlit dashboard visualizes the pipeline's recorded outputs —
+evaluation metrics, per-stage benchmarks (runtime & memory), build-vs-buy cost
+analysis, distribution drift, and the analysis reports. It reads the committed
+JSON/markdown outputs and does **not** re-run the extraction pipeline, so it is
+lightweight and independent of the heavy extraction stack (Docling, layout
+models, OCR).
+
+```bash
+# Dashboard-only dependencies (no torch/docling needed)
+pip install -r requirements-dashboard.txt
+
+# Launch
+streamlit run dashboard/app.py
+```
+
+Then open http://localhost:8501. Because it only depends on `streamlit`,
+`plotly`, and `pandas`, it can also be deployed for free to
+[Streamlit Community Cloud](https://streamlit.io/cloud) by pointing it at
+`dashboard/app.py`.
+
+> A live "upload a PDF and parse it" demo is intentionally out of scope: the
+> extraction stack is heavy and takes minutes per document, which is a poor fit
+> for an always-on hosted demo. The dashboard focuses on the results the
+> pipeline produces.
+
 ## Project Structure
 
 ```

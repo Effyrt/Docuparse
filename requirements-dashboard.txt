@@ -1,0 +1,6 @@
+# Dependencies for the results dashboard (dashboard/app.py).
+# Lightweight and independent of the heavy extraction stack, so the dashboard
+# can be run or deployed (e.g. Streamlit Community Cloud) on its own.
+streamlit>=1.49.0   # width="stretch" API used by the app
+plotly>=5.22.0
+pandas>=2.1.0
