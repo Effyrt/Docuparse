@@ -1,0 +1,12 @@
+# Dependencies for the results dashboard (dashboard/app.py).
+#
+# This file lives next to the entrypoint on purpose: Streamlit Community Cloud
+# searches the entrypoint's directory FIRST and a dependency file here takes
+# precedence over the repo-root requirements.txt. That keeps the heavy
+# extraction stack (torch, docling, ...) out of the hosted dashboard build.
+#
+# Lightweight and independent of the extraction pipeline, so the dashboard runs
+# and deploys on its own.
+streamlit>=1.49.0   # width="stretch" API used by the app
+plotly>=5.22.0
+pandas>=2.1.0

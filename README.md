@@ -47,18 +47,39 @@ JSON/markdown outputs and does **not** re-run the extraction pipeline, so it is
 lightweight and independent of the heavy extraction stack (Docling, layout
 models, OCR).
 
+### Run locally
+
 ```bash
 # Dashboard-only dependencies (no torch/docling needed)
-pip install -r requirements-dashboard.txt
+pip install -r dashboard/requirements.txt
 
 # Launch
 streamlit run dashboard/app.py
 ```
 
-Then open http://localhost:8501. Because it only depends on `streamlit`,
-`plotly`, and `pandas`, it can also be deployed for free to
-[Streamlit Community Cloud](https://streamlit.io/cloud) by pointing it at
-`dashboard/app.py`.
+Then open http://localhost:8501.
+
+### Deploy to Streamlit Community Cloud (free)
+
+The dashboard is set up to deploy as-is — no extra work needed to keep the heavy
+pipeline dependencies out of the hosted build:
+
+1. Push this repo to GitHub (already done).
+2. Go to [share.streamlit.io](https://share.streamlit.io) → **Create app** →
+   **Deploy a public app from GitHub**.
+3. Set:
+   - **Repository:** `Effyrt/Docuparse`
+   - **Branch:** `main`
+   - **Main file path:** `dashboard/app.py`
+   - **Python version** (Advanced settings): `3.11`
+4. Click **Deploy**.
+
+**Why this works cleanly:** Community Cloud searches the entrypoint's directory
+*before* the repo root and uses the first dependency file it finds, so it installs
+[`dashboard/requirements.txt`](dashboard/requirements.txt) (streamlit + plotly +
+pandas only) instead of the heavy root `requirements.txt`. The Streamlit config
+lives at [`.streamlit/config.toml`](.streamlit/config.toml), which is where
+Community Cloud reads it from when the entrypoint is in a subdirectory.
 
 > A live "upload a PDF and parse it" demo is intentionally out of scope: the
 > extraction stack is heavy and takes minutes per document, which is a poor fit
