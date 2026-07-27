@@ -31,6 +31,16 @@ def _fmt(value, digits: int = 4) -> str:
     return "—" if value is None else f"{value:.{digits}f}"
 
 
+def render_provenance() -> None:
+    """A banner shown on every page so viewers know the data is a static snapshot."""
+    when = dl.data_as_of() or "a previous run"
+    st.info(
+        f"📌 **Static snapshot — figures are from the pipeline run on {when}.** "
+        "This dashboard reads committed result files; it does **not** run the "
+        "extraction pipeline live."
+    )
+
+
 # --------------------------------------------------------------------------- #
 # Sidebar
 # --------------------------------------------------------------------------- #
@@ -41,7 +51,8 @@ st.sidebar.caption(
 )
 page = st.sidebar.radio(
     "View",
-    ["Overview", "Benchmarks", "Cost (Build vs Buy)", "Distribution Drift", "Reports"],
+    ["About & Skills", "Overview", "Benchmarks", "Cost (Build vs Buy)",
+     "Distribution Drift", "Reports"],
 )
 st.sidebar.info(
     "This dashboard visualizes recorded runs. A live 'upload a PDF and parse' "
@@ -224,11 +235,61 @@ def render_reports() -> None:
     st.markdown(dl.read_report(reports[choice]))
 
 
+# --------------------------------------------------------------------------- #
+# About & Skills — the landing page
+# --------------------------------------------------------------------------- #
+# A curated shortlist of the most valuable concepts behind the project — not an
+# exhaustive catalogue of every library used.
+KEY_SKILLS = [
+    ("Document AI & layout understanding",
+     "Parsing complex financial PDFs with OCR fallback and layout/table models "
+     "(Docling, LayoutParser, Tesseract, Camelot)."),
+    ("Reproducible ML pipelines (MLOps)",
+     "A staged, parameterized DVC pipeline from download through export."),
+    ("Quantitative evaluation",
+     "Text WER/CER and table precision/recall/F1, with regression and "
+     "distribution-drift monitoring."),
+    ("Data validation",
+     "Cross-verifying extracted figures against authoritative SEC XBRL data."),
+    ("Performance & cost engineering",
+     "Per-stage runtime/memory benchmarking and a build-vs-buy cost analysis."),
+]
+
+
+def render_about() -> None:
+    st.title("📄 DocuParse — Financial Filing Parser")
+    st.markdown(
+        "An end-to-end pipeline that extracts text, tables, and structure from "
+        "**SEC financial filings (10-K / 10-Q)**, measures the extraction quality, "
+        "and cross-checks the numbers against authoritative **XBRL** data. "
+        "The tabs on the left present the pipeline's recorded results."
+    )
+
+    st.subheader("🧠 Key concepts & skills")
+    for title, desc in KEY_SKILLS:
+        st.markdown(f"- **{title}** — {desc}")
+
+    st.subheader("🛠️ Built with")
+    st.markdown("`Python` · `DVC` · `Docling` · `pandas` · `Streamlit`")
+
+    st.subheader("🔗 Links")
+    st.markdown(
+        "- **Source code:** https://github.com/Effyrt/Docuparse\n"
+        "- **Demo video:** "
+        "https://drive.google.com/file/d/1w8RPBch1nPV8BpZIw0tFLPD1BmK0rkfN/view\n"
+        "- **Interactive tutorial (CodeLabs):** "
+        "https://codelabs-preview.appspot.com/?file_id=1eoeyKHeNX_qYq6m8oL37XLQMEoLCK7Xv02sBSGAGbwg#0"
+    )
+
+
 PAGES = {
+    "About & Skills": render_about,
     "Overview": render_overview,
     "Benchmarks": render_benchmarks,
     "Cost (Build vs Buy)": render_cost,
     "Distribution Drift": render_drift,
     "Reports": render_reports,
 }
+
+render_provenance()
 PAGES[page]()

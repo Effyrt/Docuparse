@@ -99,3 +99,27 @@ def test_real_reports_listed():
     names = {p.name for p in dl.list_reports()}
     assert "benchmarks.md" in names
     assert "xbrl_cross_verification_report.md" in names
+
+
+# --- snapshot-date provenance ----------------------------------------------- #
+def test_data_as_of_none_for_empty_root(tmp_path):
+    assert dl.data_as_of(tmp_path) is None
+
+
+def test_data_as_of_picks_latest_date(tmp_path):
+    # Only a metrics history file exists; data_as_of should return its latest date.
+    hist_dir = tmp_path / "evaluation" / "metrics"
+    hist_dir.mkdir(parents=True)
+    (hist_dir / "metrics_history.json").write_text(
+        '[{"timestamp": "2024-01-01T10:00:00"}, '
+        '{"timestamp": "2025-06-15T12:00:00"}]',
+        encoding="utf-8",
+    )
+    assert dl.data_as_of(tmp_path) == "2025-06-15"
+
+
+def test_data_as_of_real_data_is_a_date():
+    as_of = dl.data_as_of()
+    assert as_of is not None
+    # YYYY-MM-DD shape
+    assert len(as_of) == 10 and as_of[4] == "-" and as_of[7] == "-"
