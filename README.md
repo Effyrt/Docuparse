@@ -71,7 +71,7 @@ pipeline dependencies out of the hosted build:
    - **Repository:** `Effyrt/Docuparse`
    - **Branch:** `main`
    - **Main file path:** `dashboard/app.py`
-   - **Python version** (Advanced settings): `3.11`
+   - **Python version** (Advanced settings): `3.13`
 4. Click **Deploy**.
 
 **Why this works cleanly:** Community Cloud searches the entrypoint's directory
