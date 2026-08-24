@@ -31,9 +31,9 @@ def _read_json(path: Path) -> Optional[Any]:
         return None
 
 
-def _latest(pattern: str) -> Optional[Path]:
-    """Return the most recently modified file matching a glob under the repo."""
-    matches = glob.glob(str(REPO_ROOT / pattern))
+def _latest(pattern: str, root: Path = REPO_ROOT) -> Optional[Path]:
+    """Return the most recently modified file matching a glob under ``root``."""
+    matches = glob.glob(str(root / pattern))
     if not matches:
         return None
     return Path(max(matches, key=os.path.getmtime))
@@ -53,6 +53,40 @@ def load_metrics_history(root: Path = REPO_ROOT) -> List[Dict[str, Any]]:
     if not isinstance(data, list):
         return []
     return sorted(data, key=lambda r: r.get("timestamp", ""))
+
+
+def _all_timestamps(root: Path = REPO_ROOT) -> List[str]:
+    """Collect ISO timestamps from every result file that records one."""
+    stamps: List[str] = []
+
+    bench = load_benchmark(root).get("benchmark_info", {}) or {}
+    stamps.append(bench.get("timestamp"))
+
+    stamps.append((load_drift(root) or {}).get("timestamp"))
+
+    history = load_metrics_history(root)
+    if history:
+        stamps.append(history[-1].get("timestamp"))
+
+    summary = _read_json(root / "evaluation" / "latest_evaluation_summary.json") or {}
+    stamps.append(summary.get("evaluation_timestamp"))
+
+    cost_info = (load_cost_analysis(root).get("analysis_info", {}) or {})
+    stamps.append(cost_info.get("timestamp"))
+
+    return [s for s in stamps if s]
+
+
+def data_as_of(root: Path = REPO_ROOT) -> Optional[str]:
+    """Return the date (YYYY-MM-DD) of the most recent recorded pipeline run.
+
+    Used to tell viewers the dashboard shows a static snapshot, not live data.
+    ISO-8601 strings sort lexicographically, so max() gives the latest.
+    """
+    stamps = _all_timestamps(root)
+    if not stamps:
+        return None
+    return max(stamps)[:10]
 
 
 def metric_cards(metrics: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -115,7 +149,7 @@ def metric_cards(metrics: Dict[str, Any]) -> List[Dict[str, Any]]:
 # --------------------------------------------------------------------------- #
 def load_benchmark(root: Path = REPO_ROOT) -> Dict[str, Any]:
     """Load the most recent corrected pipeline benchmark."""
-    path = _latest("benchmarks/results/CORRECTED_pipeline_benchmark_*.json")
+    path = _latest("benchmarks/results/CORRECTED_pipeline_benchmark_*.json", root)
     return _read_json(path) if path else {}
 
 
@@ -152,7 +186,7 @@ def benchmark_failures(benchmark: Dict[str, Any]) -> List[Dict[str, Any]]:
 # --------------------------------------------------------------------------- #
 def load_cost_analysis(root: Path = REPO_ROOT) -> Dict[str, Any]:
     """Load the most recent cloud vs infrastructure cost analysis."""
-    path = _latest("benchmarks/results/cost_analysis_*.json")
+    path = _latest("benchmarks/results/cost_analysis_*.json", root)
     return _read_json(path) if path else {}
 
 
